@@ -1,0 +1,53 @@
+{
+  "worldSettings" : {
+    "windowTitle" : "Window Title",
+    "backgroundMusic" : "",
+    "backgroundColor" : [ 0.0, 0.0, 0.0, 1.0 ],
+    "width" : 1024,
+    "height" : 768,
+    "spp" : 16
+  },
+  "camera" : {
+    "name" : "testName",
+    "eye" : [ 0.0, 0.0, 0.0 ],
+    "center" : [ 0.0, 0.0, 0.0 ],
+    "vup" : [ 0.0, 0.0, 0.0 ],
+    "fovy" : 0.0,
+    "znear" : 0.0,
+    "zfar" : 0
+  },
+  "meshes" : [ {
+    "name" : "testName",
+    "file" : "testFile"
+  } ],
+  "meshInstances" : [ {
+    "name" : "testName",
+    "mesh" : "testMesh",
+    "vertexShader" : "testVShader",
+    "fragmentShader" : "testFShader",
+    "scale" : [ 0.0, 0.0, 0.0 ],
+    "rotation" : [ 0.0, 0.0, 0.0, 0.0 ],
+    "translation" : [ 0.0, 0.0, 0.0 ],
+    "textures" : [ {
+      "texName" : "testTex",
+      "texType" : "testType"
+    } ],
+    "colors" : [ {
+      "type" : "testColorType",
+      "value" : [ 0.0, 0.0, 0.0, 1.0 ]
+    } ]
+  } ],
+  "textures" : [ {
+    "name" : "test",
+    "file" : "test.png"
+  } ],
+  "lights" : [ {
+    "name" : "testLightName",
+    "type" : "testLightType",
+    "direction" : [ 0.0, 1.0, 0.0, 0.0 ],
+    "position" : [ 0.0, 0.0, 0.0, 1.0 ],
+    "attenuation" : [ 0.0, 0.0, 0.0, 1.0 ],
+    "color" : [ 0.0, 0.0, 0.0, 0.0 ],
+    "coneAngles" : [ 0.5, 0.55, 0.0, 0.0 ]
+  } ]
+}
