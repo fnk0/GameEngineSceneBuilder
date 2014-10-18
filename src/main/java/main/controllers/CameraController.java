@@ -2,6 +2,7 @@ package main.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import main.controllers.abstractControllers.DefaultController;
 import main.models.Camera;
 import main.models.SceneModel;
 import main.utils.CustomUtils;

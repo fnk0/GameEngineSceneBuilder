@@ -1,6 +1,6 @@
 package main.views;
 
-import main.controllers.DefaultController;
+import main.controllers.abstractControllers.DefaultController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -36,6 +36,7 @@ public abstract class DefaultView extends AnchorPane {
             FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource(getLayoutLocation()));
             root = loader.load();
             mController = loader.getController();
+            mController.setRootNode(root);
         } catch (NullPointerException ex) {
             System.out.println("XML Layout is Null.");
         } catch (IOException ex) {

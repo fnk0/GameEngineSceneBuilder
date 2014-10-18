@@ -28,6 +28,7 @@ public class SceneBuilder extends Application {
         FXMLLoader loader = CustomUtils.getLoader(ConstantUtils.MAIN_LAYOUT, getClass().getClassLoader());
         Parent root = loader.load();
         MainController mainController = loader.getController();
+        primaryStage.setResizable(false);
         primaryStage.setTitle(ConstantUtils.WINDOW_TITLE);
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

@@ -7,7 +7,7 @@
     "height" : 768,
     "spp" : 16
   },
-  "camera" : {
+  "cameras" : [ {
     "name" : "testName",
     "eye" : [ 0.0, 0.0, 0.0 ],
     "center" : [ 0.0, 0.0, 0.0 ],
@@ -15,7 +15,7 @@
     "fovy" : 0.0,
     "znear" : 0.0,
     "zfar" : 0
-  },
+  } ],
   "meshes" : [ {
     "name" : "testName",
     "file" : "testFile"

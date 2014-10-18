@@ -4,6 +4,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.DirectoryChooser;
+
+import java.io.File;
 
 /**
  * Created by <a href="mailto:marcusandreog@gmail.com">Marcus Gabilheri</a>
@@ -38,6 +41,11 @@ public class CustomUtils {
         return new FXMLLoader(loader.getResource(fileLocation));
     }
 
+    /**
+     *
+     * @param field
+     * @return
+     */
     public static boolean isTextNumValid(TextField field) {
 
         if(!field.getText().isEmpty()) {
@@ -51,5 +59,21 @@ public class CustomUtils {
             }
         }
         return false;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public static String getFileOutputLocation() {
+        DirectoryChooser chooser = new DirectoryChooser();
+        chooser.setTitle("Select output location");
+        File mFile = chooser.showDialog(null);
+
+        if(mFile != null) {
+            return mFile.getAbsolutePath().toString();
+        } else {
+            return null;
+        }
     }
 }

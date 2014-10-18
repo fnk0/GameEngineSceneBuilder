@@ -1,6 +1,7 @@
-package main.controllers;
+package main.controllers.abstractControllers;
 
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import main.models.SceneModel;
 
 import java.net.URL;
@@ -15,6 +16,7 @@ import java.util.ResourceBundle;
  */
 public abstract class DefaultController implements Initializable {
 
+    private Parent rootNode;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -28,5 +30,21 @@ public abstract class DefaultController implements Initializable {
      */
     public SceneModel getModelData() {
         return null;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Parent getRootNode() {
+        return rootNode;
+    }
+
+    /**
+     *
+     * @param rootNode
+     */
+    public void setRootNode(Parent rootNode) {
+        this.rootNode = rootNode;
     }
 }

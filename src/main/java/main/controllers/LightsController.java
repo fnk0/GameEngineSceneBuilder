@@ -1,5 +1,7 @@
 package main.controllers;
 
+import main.controllers.abstractControllers.DefaultController;
+
 /**
  * Created by <a href="mailto:marcusandreog@gmail.com">Marcus Gabilheri</a>
  *

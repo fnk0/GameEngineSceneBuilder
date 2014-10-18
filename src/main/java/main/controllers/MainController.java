@@ -4,12 +4,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import main.controllers.abstractControllers.DefaultController;
 import main.utils.CustomUtils;
-import main.views.CameraView;
-import main.views.DefaultView;
-import main.views.WorldSettingsView;
+import main.views.*;
 
 import java.net.URL;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -29,12 +30,17 @@ public class MainController extends DefaultController {
 
     private BorderPane middlePane;
 
-    private DefaultView worldSettingsPane, cameraPane;
+    private DefaultView worldSettingsPane, cameraPane, meshesPane, meshInstancesPane;
+
+    private List<DefaultView> meshes;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        meshes = new LinkedList<DefaultView>();
         worldSettingsPane = new WorldSettingsView();
         cameraPane = new CameraView();
+        meshesPane = new MeshesView();
+        meshInstancesPane = new MeshInstanceView();
 
         middlePane = new BorderPane();
 
@@ -57,12 +63,12 @@ public class MainController extends DefaultController {
 
     @FXML
     public void selectMeshes() {
-
+        middlePane.setCenter(meshesPane);
     }
 
     @FXML
     public void selectMeshInstances() {
-
+        middlePane.setCenter(meshInstancesPane);
     }
 
     @FXML
@@ -77,7 +83,7 @@ public class MainController extends DefaultController {
 
     @FXML
     public void selectOutputLocation() {
-
+        outputLocation.setText(CustomUtils.getFileOutputLocation());
     }
 
     @FXML

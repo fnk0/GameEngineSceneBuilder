@@ -12,7 +12,8 @@ import java.util.List;
  */
 public class GameScene {
 
-    private SceneModel worldSettings, camera;
+    private SceneModel worldSettings;
+    private List<SceneModel> cameras;
     private List<SceneModel> meshes;
     private List<SceneModel> meshInstances;
     private List<SceneModel> textures;
@@ -20,7 +21,7 @@ public class GameScene {
 
     public GameScene() {
         this.worldSettings = new WorldSettings();
-        this.camera = new Camera();
+        this.cameras = new ArrayList<SceneModel>();
         this.meshes = new ArrayList<SceneModel>();
         this.meshInstances = new ArrayList<SceneModel>();
         this.textures = new ArrayList<SceneModel>();
@@ -35,12 +36,12 @@ public class GameScene {
         this.worldSettings = worldSettings;
     }
 
-    public SceneModel getCamera() {
-        return camera;
+    public List<SceneModel> getCameras() {
+        return cameras;
     }
 
-    public void setCamera(SceneModel camera) {
-        this.camera = camera;
+    public void setCameras(List<SceneModel> cameras) {
+        this.cameras = cameras;
     }
 
     public List<SceneModel> getMeshes() {

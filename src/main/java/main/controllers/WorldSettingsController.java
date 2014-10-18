@@ -1,5 +1,7 @@
 package main.controllers;
 
+import main.controllers.abstractControllers.DefaultController;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 

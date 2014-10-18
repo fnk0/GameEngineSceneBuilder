@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="600.0" stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.individualElementsControllers.ColorRowController">
+   <children>
+      <ComboBox fx:id="colorType" editable="true" prefWidth="150.0" promptText="Color Type" />
+      <TextField fx:id="red" prefWidth="55.0" promptText="R">
+         <HBox.margin>
+            <Insets left="15.0" />
+         </HBox.margin>
+      </TextField>
+      <TextField fx:id="green" prefWidth="55.0" promptText="G">
+         <HBox.margin>
+            <Insets left="15.0" />
+         </HBox.margin>
+      </TextField>
+      <TextField fx:id="blue" layoutX="240.0" layoutY="27.0" prefWidth="55.0" promptText="B">
+         <HBox.margin>
+            <Insets left="15.0" />
+         </HBox.margin>
+      </TextField>
+      <TextField fx:id="alpha" layoutX="285.0" layoutY="27.0" prefWidth="55.0" promptText="A">
+         <HBox.margin>
+            <Insets left="15.0" />
+         </HBox.margin>
+      </TextField>
+      <HBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="228.0">
+         <children>
+            <Button layoutX="312.0" layoutY="10.0" mnemonicParsing="false" onAction="#removeColorBox" prefHeight="43.0" prefWidth="57.0" styleClass="btn-red" text="-">
+               <HBox.margin>
+                  <Insets right="40.0" />
+               </HBox.margin>
+            </Button>
+            <Button layoutX="195.0" layoutY="19.0" mnemonicParsing="false" onAction="#addColorBox" prefHeight="43.0" prefWidth="57.0" styleClass="btn" text="+">
+               <HBox.margin>
+                  <Insets right="25.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <padding>
+      <Insets left="20.0" />
+   </padding>
+</HBox>

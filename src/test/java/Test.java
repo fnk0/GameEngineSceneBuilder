@@ -33,7 +33,7 @@ public class Test  {
         meshInstance.getTextures().add(tex);
 
         scene.setWorldSettings(worldSettings);
-        scene.setCamera(camera);
+        scene.getCameras().add(camera);
         scene.getMeshes().add(mesh);
         scene.getLights().add(light);
         scene.getTextures().add(texture);

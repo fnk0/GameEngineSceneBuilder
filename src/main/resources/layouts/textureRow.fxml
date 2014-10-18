@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" fx:controller="main.controllers.individualElementsControllers.TextureRowController" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="600.0" stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ComboBox fx:id="texType" editable="true" prefWidth="150.0" promptText="Texture Type" />
+      <TextField fx:id="texName" promptText="Texture Name">
+         <HBox.margin>
+            <Insets left="20.0" />
+         </HBox.margin>
+      </TextField>
+      <HBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="263.0">
+         <children>
+            <Button layoutX="312.0" layoutY="10.0" mnemonicParsing="false" onAction="#removeTextureBox" prefHeight="43.0" prefWidth="57.0" styleClass="btn-red" text="-">
+               <HBox.margin>
+                  <Insets right="40.0" />
+               </HBox.margin>
+            </Button>
+            <Button layoutX="195.0" layoutY="19.0" mnemonicParsing="false" onAction="#addTextureBox" prefHeight="43.0" prefWidth="57.0" styleClass="btn" text="+">
+               <HBox.margin>
+                  <Insets right="25.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <padding>
+      <Insets left="20.0" />
+   </padding>
+</HBox>
