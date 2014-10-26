@@ -9,7 +9,7 @@ import main.utils.CustomUtils;
 import main.views.*;
 
 import java.net.URL;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -30,17 +30,25 @@ public class MainController extends DefaultController {
 
     private BorderPane middlePane;
 
-    private DefaultView worldSettingsPane, cameraPane, meshesPane, meshInstancesPane;
+    private DefaultView worldSettingsPane, cameraPane, meshesPane, meshInstancesPane, texturesPane, lightsPane;
 
     private List<DefaultView> meshes;
+    private List<DefaultView> meshInstances;
+    private List<DefaultView> textures;
+    private List<DefaultView> lights;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        meshes = new LinkedList<DefaultView>();
+        meshes = new ArrayList<DefaultView>();
+        meshInstances = new ArrayList<DefaultView>();
+        textures = new ArrayList<DefaultView>();
+        lights = new ArrayList<DefaultView>();
         worldSettingsPane = new WorldSettingsView();
         cameraPane = new CameraView();
         meshesPane = new MeshesView();
         meshInstancesPane = new MeshInstanceView();
+        texturesPane = new TextureView();
+        lightsPane = new LightsView();
 
         middlePane = new BorderPane();
 
@@ -73,12 +81,12 @@ public class MainController extends DefaultController {
 
     @FXML
     public void selectTextures() {
-
+        middlePane.setCenter(texturesPane);
     }
 
     @FXML
     public void selectLights() {
-
+        middlePane.setCenter(lightsPane);
     }
 
     @FXML

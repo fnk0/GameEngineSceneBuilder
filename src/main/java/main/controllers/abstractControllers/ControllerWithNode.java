@@ -7,7 +7,7 @@ package main.controllers.abstractControllers;
  * @version 1.0
  * @since 10/16/14
  */
-public class ControllerWithNode extends DefaultController {
+public abstract class ControllerWithNode extends DefaultController {
 
     private int nodePosition;
 

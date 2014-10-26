@@ -37,14 +37,6 @@ public class MeshesController extends ListController {
         meshViews.add(firstMesh);
     }
 
-    public void addMeshToList(MeshView m) {
-        meshViews.add(m);
-    }
-
-    public void addMeshViewToBox(MeshView v) {
-        meshesPanel.getChildren().add(v);
-    }
-
     @Override
     public Pane getBoxPane() {
         return meshesPanel;

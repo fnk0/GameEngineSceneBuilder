@@ -6,112 +6,19 @@
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 
-
 <Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.TexturesController">
    <children>
-      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="790.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="790.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Textures">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="790.0">
                      <children>
-                        <VBox layoutX="144.0" layoutY="52.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <children>
-                              <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
-                                 <VBox.margin>
-                                    <Insets left="15.0" right="15.0" top="15.0" />
-                                 </VBox.margin>
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Window Title:" />
-                                    <TextField fx:id="windowTitle" prefWidth="400.0" promptText="Required">
-                                       <HBox.margin>
-                                          <Insets left="15.0" />
-                                       </HBox.margin>
-                                    </TextField>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="25.0" prefHeight="50.0" prefWidth="200.0">
-                                 <VBox.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </VBox.margin>
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Width:" />
-                                    <TextField fx:id="width" prefWidth="400.0" promptText="Optional (Default 1024px)">
-                                       <HBox.margin>
-                                          <Insets left="59.0" />
-                                       </HBox.margin>
-                                    </TextField>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="75.0" prefHeight="50.0" prefWidth="200.0">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Height:" />
-                                    <TextField fx:id="height" prefWidth="400.0" promptText="Optional (Default 768px)">
-                                       <HBox.margin>
-                                          <Insets left="54.0" />
-                                       </HBox.margin>
-                                    </TextField>
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </VBox.margin>
-                              </HBox>
-                              <HBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="125.0" prefHeight="50.0" prefWidth="200.0">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Background Color:" />
-                                    <TextField fx:id="red" prefHeight="26.0" prefWidth="75.0" promptText="Red">
-                                       <HBox.margin>
-                                          <Insets left="30.0" />
-                                       </HBox.margin>
-                                    </TextField>
-                                    <TextField fx:id="green" layoutX="157.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="Green">
-                                       <HBox.margin>
-                                          <Insets left="25.0" />
-                                       </HBox.margin>
-                                    </TextField>
-                                    <TextField fx:id="blue" layoutX="232.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="Blue">
-                                       <HBox.margin>
-                                          <Insets left="25.0" />
-                                       </HBox.margin>
-                                    </TextField>
-                                    <TextField fx:id="alpha" layoutX="307.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="Alpha">
-                                       <HBox.margin>
-                                          <Insets left="25.0" />
-                                       </HBox.margin>
-                                    </TextField>
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </VBox.margin>
-                              </HBox>
-                              <HBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="25.0" prefHeight="50.0" prefWidth="200.0">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Background Music:" />
-                                    <TextField fx:id="backgroundMusic" prefWidth="400.0" promptText="Optional">
-                                       <HBox.margin>
-                                          <Insets left="15.0" />
-                                       </HBox.margin>
-                                    </TextField>
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </VBox.margin>
-                              </HBox>
-                              <HBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="225.0" prefHeight="50.0" prefWidth="200.0">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SPP:" />
-                                    <TextField fx:id="spp" prefWidth="100.0">
-                                       <HBox.margin>
-                                          <Insets left="15.0" />
-                                       </HBox.margin>
-                                    </TextField>
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </VBox.margin>
-                              </HBox>
-                           </children>
-                        </VBox>
+                        <ScrollPane prefHeight="547.0" prefViewportHeight="547.0" prefViewportWidth="790.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <VBox fx:id="texturesPanel" layoutX="144.0" layoutY="52.0" prefWidth="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </content>
+                        </ScrollPane>
                      </children>
                   </AnchorPane>
             </content>

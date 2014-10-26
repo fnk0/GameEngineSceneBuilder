@@ -28,6 +28,7 @@ public class ConstantUtils {
     public static String MESH__INSTANCE_FILE_LAYOUT = "layouts/meshInstanceFileBox.fxml";
     public static String ROW_COLOR_LAYOUT = "layouts/rowColor.fxml";
     public static String ROW_TEXTURES_LAYOUT = "layouts/textureRow.fxml";
+    public static String FILE_BOX_TEXTURES_LAYOUT = "layouts/textureFileBox.fxml";
 
 
 

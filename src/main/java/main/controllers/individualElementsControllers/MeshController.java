@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import main.controllers.MeshesController;
 import main.controllers.abstractControllers.ControllerWithNode;
+import main.utils.CustomUtils;
 import main.views.MeshView;
 
 /**
@@ -37,7 +38,7 @@ public class MeshController extends ControllerWithNode {
 
     @FXML
     public void selectMeshLocation() {
-
+        meshFilePath.setText(CustomUtils.getFileOutputLocation());
     }
 
     public void setMeshesController(MeshesController meshesController) {

@@ -22,9 +22,7 @@ public abstract class DefaultView extends AnchorPane {
     public DefaultView() {
 
         Pane pane = getPaneFromXML();
-
         CustomUtils.setAnchors(pane);
-
         this.getChildren().add(pane);
     }
 
@@ -41,6 +39,7 @@ public abstract class DefaultView extends AnchorPane {
             System.out.println("XML Layout is Null.");
         } catch (IOException ex) {
             System.out.println("Could not load XML layout.");
+            ex.printStackTrace();
         }
 
         return root;
