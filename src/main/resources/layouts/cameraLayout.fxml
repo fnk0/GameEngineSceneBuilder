@@ -6,193 +6,27 @@
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 
-<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.CameraController">
+<Pane prefHeight="600.0" styleClass="panel" stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.CameraController">
    <children>
-      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="790.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Camera">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="790.0">
-                     <children>
-                        <VBox layoutX="144.0" layoutY="52.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <children>
-                              <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
-                                 <VBox.margin>
-                                    <Insets left="15.0" right="15.0" top="15.0" />
-                                 </VBox.margin>
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Camera Name:" />
-                                    <TextField fx:id="cameraName" prefWidth="400.0" promptText="Required">
-                                       <HBox.margin>
-                                          <Insets left="15.0" />
-                                       </HBox.margin>
-                                    </TextField>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="125.0" prefHeight="50.0" prefWidth="200.0">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Eye:" />
-                                    <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="753.0">
-                                       <children>
-                                          <TextField fx:id="eyeX" prefHeight="26.0" prefWidth="75.0" promptText="X">
-                                             <HBox.margin>
-                                                <Insets left="30.0" />
-                                             </HBox.margin>
-                                          </TextField>
-                                          <TextField fx:id="eyeY" layoutX="157.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="Y">
-                                             <HBox.margin>
-                                                <Insets left="25.0" />
-                                             </HBox.margin>
-                                          </TextField>
-                                          <TextField fx:id="eyeZ" layoutX="232.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="Z">
-                                             <HBox.margin>
-                                                <Insets left="25.0" />
-                                             </HBox.margin>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets right="400.0" />
-                                       </padding>
-                                    </HBox>
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </VBox.margin>
-                              </HBox>
-                              <HBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="75.0" prefHeight="50.0" prefWidth="200.0">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Center:" />
-                                    <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="730.0">
-                                       <children>
-                                          <TextField fx:id="centerX" prefHeight="26.0" prefWidth="75.0" promptText="X">
-                                             <HBox.margin>
-                                                <Insets left="30.0" />
-                                             </HBox.margin>
-                                          </TextField>
-                                          <TextField fx:id="centerY" layoutX="157.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="Y">
-                                             <HBox.margin>
-                                                <Insets left="25.0" />
-                                             </HBox.margin>
-                                          </TextField>
-                                          <TextField fx:id="centerZ" layoutX="232.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="Z">
-                                             <HBox.margin>
-                                                <Insets left="25.0" />
-                                             </HBox.margin>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets right="400.0" />
-                                       </padding>
-                                    </HBox>
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </VBox.margin>
-                              </HBox>
-                              <HBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="125.0" prefHeight="50.0" prefWidth="200.0">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vup:" />
-                                    <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="740.0">
-                                       <children>
-                                          <TextField fx:id="vupX" prefHeight="26.0" prefWidth="75.0" promptText="X">
-                                             <HBox.margin>
-                                                <Insets left="30.0" />
-                                             </HBox.margin>
-                                          </TextField>
-                                          <TextField fx:id="vupY" layoutX="157.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="Y">
-                                             <HBox.margin>
-                                                <Insets left="25.0" />
-                                             </HBox.margin>
-                                          </TextField>
-                                          <TextField fx:id="vupZ" layoutX="232.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="Z">
-                                             <HBox.margin>
-                                                <Insets left="25.0" />
-                                             </HBox.margin>
-                                          </TextField>
-                                       </children>
-                                       <HBox.margin>
-                                          <Insets />
-                                       </HBox.margin>
-                                       <padding>
-                                          <Insets right="400.0" />
-                                       </padding>
-                                    </HBox>
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </VBox.margin>
-                              </HBox>
-                              <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="740.0">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fovy:" />
-                                    <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="750.0">
-                                       <children>
-                                          <TextField fx:id="fovY" prefHeight="26.0" prefWidth="75.0">
-                                             <HBox.margin>
-                                                <Insets left="30.0" />
-                                             </HBox.margin>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets right="600.0" />
-                                       </padding>
-                                    </HBox>
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </VBox.margin>
-                              </HBox>
-                              <HBox alignment="CENTER_RIGHT" layoutX="25.0" layoutY="225.0" prefHeight="50.0" prefWidth="740.0">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Znear:" />
-                                    <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="750.0">
-                                       <children>
-                                          <TextField fx:id="zNear" prefHeight="26.0" prefWidth="62.0">
-                                             <HBox.margin>
-                                                <Insets left="30.0" />
-                                             </HBox.margin>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets right="600.0" />
-                                       </padding>
-                                    </HBox>
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </VBox.margin>
-                              </HBox>
-                              <HBox alignment="CENTER_RIGHT" layoutX="25.0" layoutY="275.0" prefHeight="50.0" prefWidth="740.0">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zfar:">
-                                       <HBox.margin>
-                                          <Insets />
-                                       </HBox.margin>
-                                    </Text>
-                                    <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="750.0">
-                                       <children>
-                                          <TextField fx:id="zFar" prefHeight="26.0" prefWidth="62.0">
-                                             <HBox.margin>
-                                                <Insets left="30.0" />
-                                             </HBox.margin>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets right="600.0" />
-                                       </padding>
-                                    </HBox>
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets left="15.0" right="15.0" />
-                                 </VBox.margin>
-                              </HBox>
-                           </children>
-                        </VBox>
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-        </tabs>
-      </TabPane>
+  <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="790.0">
+         <children>
+            <Text fill="#5677fc" strokeType="OUTSIDE" strokeWidth="0.0" text="Cameras" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Separator prefWidth="200.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="40.0" />
+            <HBox alignment="CENTER" prefHeight="50.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#createNewCamera" styleClass="btn" text="Create New Camera" />
+               </children>
+            </HBox>
+            <ScrollPane hbarPolicy="NEVER" layoutY="100.0" prefHeight="500.0" prefViewportHeight="80.0" prefViewportWidth="790.0" styleClass="panel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+               <content>
+                  <VBox fx:id="camerasPanel" style="-fx-background-color: #fafafa;" styleClass="panel" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
    </children>
 </Pane>

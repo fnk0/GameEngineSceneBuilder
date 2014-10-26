@@ -12,7 +12,6 @@ import java.util.ArrayList;
 public class MeshInstance extends SceneModel {
 
     private String name, mesh, vertexShader, fragmentShader;
-    private double[] scale, rotation, translation;
     private ArrayList<MeshTex> textures;
     private ArrayList<MeshColor> colors;
 
@@ -21,9 +20,6 @@ public class MeshInstance extends SceneModel {
         this.mesh = "testMesh";
         this.vertexShader = "testVShader";
         this.fragmentShader = "testFShader";
-        this.scale = new double[3];
-        this.rotation = new double[4];
-        this.translation = new double[3];
         this.textures = new ArrayList<MeshTex>();
         this.colors = new ArrayList<MeshColor>();
     }
@@ -74,29 +70,5 @@ public class MeshInstance extends SceneModel {
 
     public void setFragmentShader(String fragmentShader) {
         this.fragmentShader = fragmentShader;
-    }
-
-    public double[] getScale() {
-        return scale;
-    }
-
-    public void setScale(double[] scale) {
-        this.scale = scale;
-    }
-
-    public double[] getRotation() {
-        return rotation;
-    }
-
-    public void setRotation(double[] rotation) {
-        this.rotation = rotation;
-    }
-
-    public double[] getTranslation() {
-        return translation;
-    }
-
-    public void setTranslation(double[] translation) {
-        this.translation = translation;
     }
 }

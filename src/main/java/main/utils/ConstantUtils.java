@@ -14,6 +14,8 @@ public class ConstantUtils {
     // Scenes
     public static String MAIN_LAYOUT = "layouts/sceneBuilder.fxml";
     public static String CREATE_MESH_INSTANCES = "layouts/createMeshInstance.fxml";
+    public static String NEW_CAMERA_LAYOUT = "layouts/newCamera.fxml";
+    public static String CREATE_NEW_NODE = "layouts/newNode.fxml";
 
     // Root Panes
     public static String WORLD_SETTINGS_LAYOUT = "layouts/worldSettings.fxml";
@@ -29,7 +31,12 @@ public class ConstantUtils {
     public static String ROW_COLOR_LAYOUT = "layouts/rowColor.fxml";
     public static String ROW_TEXTURES_LAYOUT = "layouts/textureRow.fxml";
     public static String FILE_BOX_TEXTURES_LAYOUT = "layouts/textureFileBox.fxml";
+    public static String CAMERA_BOX_LAYOUT = "layouts/cameraBox.fxml";
 
-
-
+    // Window title Strings
+    public static String SELECT_TEXTURE = "Select Texture";
+    public static String SELECT_MESH = "Select Mesh";
+    public static String SELECT_CAMERA = "Select Camera";
+    public static String SELECT_MESH_INSTANCE = "Select Mesh Instance";
+    public static String SELECT_NODE = "Select Node";
 }

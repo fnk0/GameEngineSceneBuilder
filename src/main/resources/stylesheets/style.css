@@ -46,9 +46,22 @@
 }
 
 .panel {
-    -fx-background-color: #f0f4c3;
+    -fx-background-color: #fafafa;
 }
 
 .separator {
     -fx-background-color: #0091ea;
+}
+
+.scroll-pane {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane:focused {
+    -fx-background-insets: 0;
+}
+
+.scroll-pane .corner {
+    -fx-background-insets: 0;
 }

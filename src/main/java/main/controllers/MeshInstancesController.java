@@ -2,10 +2,12 @@ package main.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import main.controllers.abstractControllers.DefaultController;
+import main.controllers.abstractControllers.ListController;
 import main.views.CreateMeshInstanceView;
+import main.views.DefaultView;
 import main.views.MeshInstanceFileBoxView;
 
 import java.net.URL;
@@ -20,17 +22,17 @@ import java.util.ResourceBundle;
  * @version 1.0
  * @since 10/14/14
  */
-public class MeshInstancesController extends DefaultController {
+public class MeshInstancesController extends ListController {
 
     @FXML
     private VBox instancesPanel;
 
-    private List<MeshInstanceFileBoxView> instanceViews;
+    private List<DefaultView> instanceViews;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         super.initialize(location, resources);
-        instanceViews = new ArrayList<MeshInstanceFileBoxView>();
+        instanceViews = new ArrayList<DefaultView>();
         MeshInstanceFileBoxView firstMesh = new MeshInstanceFileBoxView();
         ((MeshInstancesFileBoxController) firstMesh.getController()).setController(this);
         instancesPanel.getChildren().add(firstMesh);
@@ -46,16 +48,13 @@ public class MeshInstancesController extends DefaultController {
         stage.show();
     }
 
-    public void addMeshToList(MeshInstanceFileBoxView m) {
-        instanceViews.add(m);
+    @Override
+    public Pane getBoxPane() {
+        return instancesPanel;
     }
 
-    public void addMeshViewToBox(MeshInstanceFileBoxView v) {
-        instancesPanel.getChildren().add(v);
-    }
-
-    public List<MeshInstanceFileBoxView> getMeshViews() {
+    @Override
+    public List<DefaultView> getViewsList() {
         return instanceViews;
     }
-
 }

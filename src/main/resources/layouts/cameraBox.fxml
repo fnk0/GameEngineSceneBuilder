@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="750.0" stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.individualElementsControllers.CameraBoxController">
+   <children>
+      <HBox alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="750.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Load from File:" />
+                  <TextField fx:id="cameraFilePath" prefWidth="430.0" promptText="Required">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#selectFile" prefWidth="30.0" styleClass="btn" text="...">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#removeCamera" prefHeight="35.0" prefWidth="45.0" styleClass="btn-red" text="-">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#addCamera" prefHeight="35.0" prefWidth="45.0" styleClass="btn" stylesheets="@../stylesheets/style.css" text="+">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+            </HBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

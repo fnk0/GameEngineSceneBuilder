@@ -2,8 +2,10 @@ package main.controllers.individualElementsControllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 import main.controllers.MeshesController;
 import main.controllers.abstractControllers.ControllerWithNode;
+import main.utils.ConstantUtils;
 import main.utils.CustomUtils;
 import main.views.MeshView;
 
@@ -38,7 +40,7 @@ public class MeshController extends ControllerWithNode {
 
     @FXML
     public void selectMeshLocation() {
-        meshFilePath.setText(CustomUtils.getFileOutputLocation());
+        meshFilePath.setText(CustomUtils.getFileNameWithoutPath(ConstantUtils.SELECT_MESH, new FileChooser.ExtensionFilter[]{CustomUtils.getPlyFilter()}));
     }
 
     public void setMeshesController(MeshesController meshesController) {

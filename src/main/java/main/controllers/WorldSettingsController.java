@@ -6,9 +6,6 @@ import main.controllers.abstractControllers.DefaultController;
 import main.models.SceneModel;
 import main.models.WorldSettings;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 /**
  * Created by <a href="mailto:marcusandreog@gmail.com">Marcus Gabilheri</a>
  *
@@ -26,11 +23,6 @@ public class WorldSettingsController extends DefaultController {
 
     @FXML
     private TextField backgroundMusic, spp;
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
 
     @Override
     public SceneModel getModelData() {

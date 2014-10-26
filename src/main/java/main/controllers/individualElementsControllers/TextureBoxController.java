@@ -1,12 +1,16 @@
 package main.controllers.individualElementsControllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 import main.controllers.TexturesController;
 import main.controllers.abstractControllers.ControllerWithNode;
+import main.models.SceneModel;
+import main.models.Texture;
+import main.utils.ConstantUtils;
 import main.utils.CustomUtils;
+import main.views.DefaultView;
 import main.views.TextureFileBoxView;
-
-import java.awt.*;
 
 /**
  * Created by <a href="mailto:marcusandreog@gmail.com">Marcus Gabilheri</a>
@@ -22,7 +26,7 @@ public class TextureBoxController extends ControllerWithNode {
 
     private TexturesController texturesController;
 
-    private TextureFileBoxView texView;
+    private DefaultView texView;
 
     @FXML
     public void addTexture() {
@@ -30,7 +34,6 @@ public class TextureBoxController extends ControllerWithNode {
         ((TextureBoxController) texView.getController()).setNodePosition(texturesController.getViewsList().size());
         ((TextureBoxController) texView.getController()).setTexturesController(texturesController);
         texturesController.addView(texView);
-
     }
 
     @FXML
@@ -40,10 +43,20 @@ public class TextureBoxController extends ControllerWithNode {
 
     @FXML
     public void selectTextureLocation() {
-        textureFilePath.setText(CustomUtils.getFileOutputLocation());
+        textureFilePath.setText(CustomUtils.getFileNameWithoutPath(ConstantUtils.SELECT_TEXTURE, new FileChooser.ExtensionFilter[]{CustomUtils.getPngFilter()}));
     }
 
     public void setTexturesController(TexturesController texturesController) {
         this.texturesController = texturesController;
+    }
+
+    @Override
+    public SceneModel getModelData() {
+
+        Texture texture = new Texture();
+        texture.setName(textureName.getText());
+        texture.setFile(textureFilePath.getText());
+
+        return texture;
     }
 }
