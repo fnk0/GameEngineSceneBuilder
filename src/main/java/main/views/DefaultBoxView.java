@@ -9,7 +9,7 @@ import main.utils.ConstantUtils;
  * @version 1.0
  * @since 10/26/14
  */
-public class CameraBoxView extends DefaultView {
+public class DefaultBoxView extends DefaultView {
 
     @Override
     public String getLayoutLocation() {

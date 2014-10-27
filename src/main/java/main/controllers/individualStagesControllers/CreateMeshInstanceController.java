@@ -1,4 +1,4 @@
-package main.controllers;
+package main.controllers.individualStagesControllers;
 
 import main.controllers.abstractControllers.DefaultController;
 

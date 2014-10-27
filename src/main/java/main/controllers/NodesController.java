@@ -9,7 +9,7 @@ import main.controllers.abstractControllers.ListController;
 import main.controllers.individualElementsControllers.DefaultFileBoxController;
 import main.views.DefaultBoxView;
 import main.views.DefaultView;
-import main.views.NewCameraView;
+import main.views.NewNodeView;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -21,41 +21,41 @@ import java.util.ResourceBundle;
  *
  * @author Marcus Gabilheri
  * @version 1.0
- * @since 10/14/14
+ * @since 10/26/14
  */
-public class CameraController extends ListController {
+public class NodesController extends ListController {
 
     @FXML
-    private VBox camerasPanel;
+    private VBox nodesPanel;
 
-    private List<DefaultView> camerasViews;
+    private List<DefaultView> nodesViews;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        super.initialize(location, resources);
+        nodesViews = new ArrayList<DefaultView>();
+        DefaultBoxView cBoxView = new DefaultBoxView();
+        ((DefaultFileBoxController) cBoxView.getController()).setListController(this);
+        nodesViews.add(cBoxView);
+        nodesPanel.getChildren().add(cBoxView);
+    }
 
     @FXML
-    public void createNewCamera() {
+    public void createNewNode() {
         Stage stage = new Stage();
         stage.setResizable(false);
-        stage.setScene(new Scene(new NewCameraView()));
+        stage.setScene(new Scene(new NewNodeView()));
         stage.sizeToScene();
         stage.show();
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        super.initialize(location, resources);
-        camerasViews = new ArrayList<DefaultView>();
-        DefaultBoxView cBoxView = new DefaultBoxView();
-        ((DefaultFileBoxController) cBoxView.getController()).setListController(this);
-        camerasViews.add(cBoxView);
-        camerasPanel.getChildren().add(cBoxView);
-    }
-
-    @Override
     public Pane getBoxPane() {
-        return camerasPanel;
+        return nodesPanel;
     }
 
     @Override
     public List<DefaultView> getViewsList() {
-        return camerasViews;
+        return nodesViews;
     }
 }

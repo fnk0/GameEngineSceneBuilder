@@ -30,7 +30,7 @@ public class MainController extends DefaultController {
 
     private BorderPane middlePane;
 
-    private DefaultView worldSettingsPane, cameraPane, meshesPane, meshInstancesPane, texturesPane, lightsPane;
+    private DefaultView worldSettingsPane, cameraPane, meshesPane, meshInstancesPane, texturesPane, lightsPane, nodesPane;
 
     private List<DefaultView> meshes;
     private List<DefaultView> meshInstances;
@@ -49,6 +49,7 @@ public class MainController extends DefaultController {
         meshInstancesPane = new MeshInstanceView();
         texturesPane = new TextureView();
         lightsPane = new LightsView();
+        nodesPane = new NodesView();
 
         middlePane = new BorderPane();
 
@@ -87,6 +88,11 @@ public class MainController extends DefaultController {
     @FXML
     public void selectLights() {
         middlePane.setCenter(lightsPane);
+    }
+
+    @FXML
+    public void selectNodes() {
+        middlePane.setCenter(nodesPane);
     }
 
     @FXML

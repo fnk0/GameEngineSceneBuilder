@@ -4,11 +4,13 @@ import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Control;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import main.models.SceneModel;
 
 import java.io.File;
@@ -85,6 +87,14 @@ public class CustomUtils {
 
     /**
      *
+     * @param element
+     */
+    public static void closeStage(Control element) {
+        ((Stage) element.getScene().getWindow()).close();
+    }
+
+    /**
+     *
      * @return
      */
     public static FileChooser.ExtensionFilter getPngFilter() {
@@ -105,6 +115,22 @@ public class CustomUtils {
      */
     public static FileChooser.ExtensionFilter getMp3Filter() {
         return new FileChooser.ExtensionFilter("MP3", "*.mp3");
+    }
+
+    /**
+     *
+     * @return
+     */
+    public static FileChooser.ExtensionFilter getWavFilter() {
+        return new FileChooser.ExtensionFilter("WAV", "*.wav");
+    }
+
+    /**
+     *
+     * @return
+     */
+    public static FileChooser.ExtensionFilter getMusicFilters() {
+        return new FileChooser.ExtensionFilter("Music Extensions", "*mp3, *.wav");
     }
 
     /**
@@ -147,9 +173,7 @@ public class CustomUtils {
     }
 
     public static void createJsonFile(SceneModel model, String filePath, String filename) {
-
         ObjectMapper mapper = new ObjectMapper();
-
         try {
             // convert user object to json string, and save to a file
             mapper.writerWithDefaultPrettyPrinter().writeValue(new File(filePath + "/" + filename + ".json"), model);
@@ -162,7 +186,5 @@ public class CustomUtils {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 }

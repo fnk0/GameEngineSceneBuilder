@@ -1,9 +1,8 @@
-package main.controllers.individualElementsControllers;
+package main.controllers.individualStagesControllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import main.controllers.abstractControllers.DefaultController;
 import main.models.Camera;
 import main.models.SceneModel;
@@ -41,7 +40,7 @@ public class NewCameraController extends DefaultController {
     @FXML
     public void createCamera() {
         CustomUtils.createJsonFile(getModelData(), outputLocation.getText(), fileName.getText());
-        ((Stage) btnCreateCamera.getScene().getWindow()).close();
+        CustomUtils.closeStage(btnCreateCamera);
     }
 
     @Override

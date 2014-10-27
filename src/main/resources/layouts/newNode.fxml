@@ -7,8 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="600.0" styleClass="panel" stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="600.0" styleClass="panel" stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.individualStagesControllers.CreateNewNodeController">
    <children>
       <HBox alignment="BOTTOM_RIGHT" minWidth="600.0" prefHeight="75.0" style="-fx-background-color: #5677fc;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -74,6 +73,11 @@
                                     <Insets left="15.0" />
                                  </HBox.margin>
                               </TextField>
+                              <Button mnemonicParsing="false" onAction="#selectMusic" styleClass="btn" text="...">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
                            </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="50.0">
@@ -153,8 +157,8 @@
       <Separator prefWidth="200.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
       <HBox alignment="CENTER_RIGHT" prefHeight="60.0" styleClass="panel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <TextField prefHeight="26.0" prefWidth="385.0" promptText="File Output Location" />
-            <Button fx:id="selectFile" mnemonicParsing="false" styleClass="btn" text="...">
+            <TextField fx:id="outputLocation" prefHeight="26.0" prefWidth="385.0" promptText="File Output Location" />
+            <Button mnemonicParsing="false" onAction="#selectFile" styleClass="btn" text="...">
                <HBox.margin>
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>

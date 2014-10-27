@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.layout.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 
-<Pane minHeight="600.0" styleClass="panel" stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.CameraController">
+
+<Pane fx:controller="main.controllers.NodesController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="-Infinity" styleClass="panel" stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-  <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="790.0">
+      <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefWidth="790.0">
          <children>
-            <Text fill="#5677fc" strokeType="OUTSIDE" strokeWidth="0.0" text="Cameras" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+            <Text fill="#5677fc" strokeType="OUTSIDE" strokeWidth="0.0" text="Nodes" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
                <font>
                   <Font size="22.0" />
                </font>
@@ -18,12 +18,12 @@
             <Separator prefWidth="200.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="40.0" />
             <HBox alignment="CENTER" prefHeight="50.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#createNewCamera" styleClass="btn" text="Create New Camera" />
+                  <Button mnemonicParsing="false" onAction="#createNewNode" styleClass="btn" text="Create New Node" />
                </children>
             </HBox>
             <ScrollPane hbarPolicy="NEVER" layoutY="100.0" prefHeight="500.0" prefViewportHeight="80.0" prefViewportWidth="790.0" styleClass="panel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
                <content>
-                  <VBox fx:id="camerasPanel" style="-fx-background-color: #fafafa;" styleClass="panel" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0" />
+                  <VBox fx:id="nodesPanel" style="-fx-background-color: #fafafa;" styleClass="panel" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0" />
                </content>
             </ScrollPane>
          </children>

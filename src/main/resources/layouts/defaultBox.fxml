@@ -6,14 +6,14 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="750.0" stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.individualElementsControllers.CameraBoxController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="750.0" stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.individualElementsControllers.DefaultFileBoxController">
    <children>
       <HBox alignment="CENTER">
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="750.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Load from File:" />
-                  <TextField fx:id="cameraFilePath" prefWidth="430.0" promptText="Required">
+                  <TextField fx:id="filePath" prefWidth="430.0" promptText="Required">
                      <HBox.margin>
                         <Insets left="15.0" />
                      </HBox.margin>
@@ -23,12 +23,12 @@
                         <Insets left="15.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#removeCamera" prefHeight="35.0" prefWidth="45.0" styleClass="btn-red" text="-">
+                  <Button mnemonicParsing="false" onAction="#removeBox" prefHeight="35.0" prefWidth="45.0" styleClass="btn-red" text="-">
                      <HBox.margin>
                         <Insets left="30.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#addCamera" prefHeight="35.0" prefWidth="45.0" styleClass="btn" stylesheets="@../stylesheets/style.css" text="+">
+                  <Button mnemonicParsing="false" onAction="#addBox" prefHeight="35.0" prefWidth="45.0" styleClass="btn" stylesheets="@../stylesheets/style.css" text="+">
                      <HBox.margin>
                         <Insets left="15.0" />
                      </HBox.margin>

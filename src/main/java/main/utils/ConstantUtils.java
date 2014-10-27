@@ -24,6 +24,7 @@ public class ConstantUtils {
     public static String MESH_INSTANCES_LAYOUT = "layouts/meshInstancesLayout.fxml";
     public static String TEXTURES_LAYOUT = "layouts/texturesLayout.fxml";
     public static String LIGHTS_LAYOUT = "layouts/lightsLayout.fxml";
+    public static String NODES_LAYOUT = "layouts/nodesLayout.fxml";
 
     // INDIVIDUAL ELEMENT LAYOUTS
     public static String MESH_LAYOUT = "layouts/meshBox.fxml";
@@ -31,7 +32,7 @@ public class ConstantUtils {
     public static String ROW_COLOR_LAYOUT = "layouts/rowColor.fxml";
     public static String ROW_TEXTURES_LAYOUT = "layouts/textureRow.fxml";
     public static String FILE_BOX_TEXTURES_LAYOUT = "layouts/textureFileBox.fxml";
-    public static String CAMERA_BOX_LAYOUT = "layouts/cameraBox.fxml";
+    public static String CAMERA_BOX_LAYOUT = "layouts/defaultBox.fxml";
 
     // Window title Strings
     public static String SELECT_TEXTURE = "Select Texture";
@@ -39,4 +40,5 @@ public class ConstantUtils {
     public static String SELECT_CAMERA = "Select Camera";
     public static String SELECT_MESH_INSTANCE = "Select Mesh Instance";
     public static String SELECT_NODE = "Select Node";
+    public static String SELECT_MUSIC = "Select Background Music";
 }

@@ -14,6 +14,7 @@ public class Node extends SceneModel {
     private String name, parent, meshInstance, backgroundMusic;
     private double[] scale, rotation, translation;
     private ArrayList<String> children;
+    private boolean isBillboard;
 
     public Node() {
         children = new ArrayList<String>();
@@ -24,9 +25,10 @@ public class Node extends SceneModel {
         this.parent = "";
         this.meshInstance = "";
         this.backgroundMusic = "";
+        this.isBillboard = false;
     }
 
-    public Node(String name, String parent, String meshInstance, String backgroundMusic, double[] scale, double[] rotation, double[] translation, ArrayList<String> children) {
+    public Node(String name, String parent, String meshInstance, String backgroundMusic, double[] scale, double[] rotation, double[] translation, ArrayList<String> children, boolean isBillboard) {
         this.name = name;
         this.parent = parent;
         this.meshInstance = meshInstance;
@@ -35,6 +37,7 @@ public class Node extends SceneModel {
         this.rotation = rotation;
         this.translation = translation;
         this.children = children;
+        this.isBillboard = isBillboard;
     }
 
     public String getName() {
@@ -99,5 +102,13 @@ public class Node extends SceneModel {
 
     public void setChildren(ArrayList<String> children) {
         this.children = children;
+    }
+
+    public boolean isBillboard() {
+        return isBillboard;
+    }
+
+    public void setBillboard(boolean isBillboard) {
+        this.isBillboard = isBillboard;
     }
 }
