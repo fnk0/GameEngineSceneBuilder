@@ -37,4 +37,20 @@ public class MeshColor extends SceneModel {
     public void setValue(double[] value) {
         this.value = value;
     }
+
+    public void setRed(String  r) {
+        value[0] = Double.parseDouble(r);
+    }
+
+    public void setBlue(String b) {
+        value[1] = Double.parseDouble(b);
+    }
+
+    public void setGreen(String g) {
+        value[2] = Double.parseDouble(g);
+    }
+
+    public void setAlpha(String a) {
+        value[3] = Double.parseDouble(a);
+    }
 }

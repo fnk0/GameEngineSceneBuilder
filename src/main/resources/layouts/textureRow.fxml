@@ -1,37 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
 
-<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" fx:controller="main.controllers.individualElementsControllers.TextureRowController" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="600.0" stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="50.0" minWidth="600.0" stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.individualElementsControllers.TextureRowController">
    <children>
-      <ComboBox fx:id="texType" editable="true" prefWidth="150.0" promptText="Texture Type" />
-      <TextField fx:id="texName" promptText="Texture Name">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Texture:">
+         <font>
+            <Font size="16.0" />
+         </font>
          <HBox.margin>
-            <Insets left="20.0" />
+            <Insets left="15.0" />
+         </HBox.margin>
+      </Text>
+      <ComboBox fx:id="texType" editable="true" prefWidth="175.0" promptText="Texture Type">
+         <HBox.margin>
+            <Insets left="15.0" />
+         </HBox.margin>
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="uDiffuseTex" />
+               <String fx:value="uOtherTex" />
+            </FXCollections>
+         </items>
+      </ComboBox>
+      <TextField fx:id="texName" layoutX="95.0" layoutY="22.0" prefWidth="175.0" promptText="Texture Name">
+         <HBox.margin>
+            <Insets left="25.0" />
          </HBox.margin>
       </TextField>
-      <HBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="263.0">
+      <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="140.0">
          <children>
-            <Button layoutX="312.0" layoutY="10.0" mnemonicParsing="false" onAction="#removeTextureBox" prefHeight="43.0" prefWidth="57.0" styleClass="btn-red" text="-">
+            <Button mnemonicParsing="false" onAction="#removeTexture" prefHeight="35.0" prefWidth="45.0" styleClass="btn-red" text="-">
                <HBox.margin>
-                  <Insets right="40.0" />
+                  <Insets />
                </HBox.margin>
             </Button>
-            <Button layoutX="195.0" layoutY="19.0" mnemonicParsing="false" onAction="#addTextureBox" prefHeight="43.0" prefWidth="57.0" styleClass="btn" text="+">
+            <Button mnemonicParsing="false" onAction="#addTexture" prefHeight="35.0" prefWidth="45.0" styleClass="btn" text="+">
                <HBox.margin>
-                  <Insets right="25.0" />
+                  <Insets left="15.0" right="15.0" />
                </HBox.margin>
             </Button>
          </children>
       </HBox>
    </children>
-   <opaqueInsets>
-      <Insets />
-   </opaqueInsets>
-   <padding>
-      <Insets left="20.0" />
-   </padding>
 </HBox>

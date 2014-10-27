@@ -9,7 +9,7 @@ import main.utils.ConstantUtils;
  * @version 1.0
  * @since 10/16/14
  */
-public class TexturesBoxView extends DefaultView {
+public class TextureRowView extends DefaultView {
 
     @Override
     public String getLayoutLocation() {

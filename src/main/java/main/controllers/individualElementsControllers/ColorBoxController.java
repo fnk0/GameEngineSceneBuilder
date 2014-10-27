@@ -4,6 +4,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import main.controllers.abstractControllers.ControllerWithNode;
 import main.controllers.abstractControllers.ListController;
+import main.models.MeshColor;
+import main.models.SceneModel;
+import main.utils.CustomUtils;
 import main.views.ColorBoxView;
 import main.views.DefaultView;
 
@@ -17,7 +20,7 @@ import main.views.DefaultView;
 public class ColorBoxController extends ControllerWithNode {
 
     @FXML
-    private TextField red, blue, green, alpha;
+    private TextField colorType, red, blue, green, alpha;
 
     private DefaultView colorView;
 
@@ -38,5 +41,25 @@ public class ColorBoxController extends ControllerWithNode {
 
     public void setListController(ListController listController) {
         this.listController = listController;
+    }
+
+    @Override
+    public SceneModel getModelData() {
+        MeshColor color = new MeshColor();
+        color.setType(colorType.getText());
+
+        if(CustomUtils.isTextNumValid(red)) {
+            color.setRed(red.getText());
+        }
+        if(CustomUtils.isTextNumValid(blue)) {
+            color.setBlue(blue.getText());
+        }
+        if(CustomUtils.isTextNumValid(green)) {
+            color.setGreen(green.getText());
+        }
+        if(CustomUtils.isTextNumValid(alpha)) {
+            color.setAlpha(alpha.getText());
+        }
+        return color;
     }
 }

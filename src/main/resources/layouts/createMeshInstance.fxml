@@ -94,7 +94,7 @@
                         <Insets />
                      </VBox.margin>
                   </HBox>
-                  <VBox prefHeight="100.0">
+                  <VBox prefHeight="150.0">
                      <children>
                         <Text fill="#5677fc" strokeType="OUTSIDE" strokeWidth="0.0" text="Textures">
                            <font>
@@ -107,14 +107,14 @@
                         <Separator prefWidth="200.0" />
                         <ScrollPane fitToHeight="true" fitToWidth="true" prefViewportHeight="101.0" prefViewportWidth="600.0">
                            <content>
-                              <TextArea fx:id="texturesList" prefHeight="200.0" prefWidth="200.0" promptText="Enter the textures names as a comma separated list." />
+                              <VBox fx:id="texturesPane" />
                            </content></ScrollPane>
                      </children>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </VBox>
-                  <VBox layoutX="10.0" layoutY="226.0" prefHeight="168.0" prefWidth="600.0">
+                  <VBox layoutX="10.0" layoutY="226.0" prefHeight="150.0">
                      <children>
                         <Text fill="#5677fc" strokeType="OUTSIDE" strokeWidth="0.0" text="Colors">
                            <font>
@@ -127,7 +127,7 @@
                         <Separator prefWidth="200.0" />
                         <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="141.0" prefViewportHeight="101.0" prefViewportWidth="600.0" prefWidth="600.0">
                            <content>
-                              <VBox fx:id="colorsPane" prefHeight="200.0" prefWidth="100.0" />
+                              <VBox fx:id="colorsPane" prefHeight="200.0" />
                            </content>
                         </ScrollPane>
                      </children>
