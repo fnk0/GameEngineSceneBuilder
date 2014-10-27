@@ -172,6 +172,28 @@ public class CustomUtils {
         }
     }
 
+    /**
+     *
+     * @param filePath
+     * @param fileName
+     * @param readModel
+     * @return
+     */
+    public static SceneModel readJsonFile(String filePath, String fileName, SceneModel readModel) {
+        ObjectMapper mapper = new ObjectMapper();
+        SceneModel model = null;
+        try {
+            model = mapper.readValue(new File(filePath + "/" + fileName), readModel.getClass());
+        } catch (JsonGenerationException ex) {
+            ex.printStackTrace();
+        } catch (JsonMappingException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return model;
+    }
+
     public static void createJsonFile(SceneModel model, String filePath, String filename) {
         ObjectMapper mapper = new ObjectMapper();
         try {

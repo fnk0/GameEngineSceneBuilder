@@ -7,7 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="600.0" stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="600.0" stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.individualStagesControllers.CreateMeshInstanceController">
    <top>
       <HBox alignment="BOTTOM_RIGHT" prefHeight="75.0" prefWidth="600.0" style="-fx-background-color: #5677fc;" BorderPane.alignment="CENTER">
          <children>
@@ -32,60 +32,69 @@
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mesh Instance Name" />
-                        <TextField fx:id="windowTitle" prefWidth="400.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mesh Instance Name">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin></Text>
+                        <TextField fx:id="meshInstanceName" prefWidth="400.0">
                            <HBox.margin>
                               <Insets left="15.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                      <VBox.margin>
-                        <Insets left="15.0" />
+                        <Insets />
                      </VBox.margin>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="25.0" prefHeight="50.0" prefWidth="200.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mesh:" />
-                        <TextField fx:id="width" prefWidth="400.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mesh:">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin></Text>
+                        <TextField fx:id="meshName" prefWidth="400.0">
                            <HBox.margin>
                               <Insets left="59.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                      <VBox.margin>
-                        <Insets left="15.0" />
+                        <Insets />
                      </VBox.margin>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="75.0" prefHeight="50.0" prefWidth="200.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vertex Shader:" />
-                        <TextField fx:id="height" prefWidth="400.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vertex Shader:">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin></Text>
+                        <TextField fx:id="vertexShader" prefWidth="400.0">
                            <HBox.margin>
                               <Insets left="54.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                      <VBox.margin>
-                        <Insets left="15.0" />
+                        <Insets />
                      </VBox.margin>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="125.0" prefHeight="50.0" prefWidth="200.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fragment Shader:" />
-                        <TextField fx:id="height1" prefWidth="400.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Fragment Shader:">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin></Text>
+                        <TextField fx:id="fragmentShader" prefWidth="400.0">
                            <HBox.margin>
                               <Insets left="54.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
-                     <padding>
-                        <Insets left="15.0" right="15.0" />
-                     </padding>
                      <VBox.margin>
-                        <Insets left="15.0" />
+                        <Insets />
                      </VBox.margin>
                   </HBox>
-                  <VBox>
+                  <VBox prefHeight="100.0">
                      <children>
                         <Text fill="#5677fc" strokeType="OUTSIDE" strokeWidth="0.0" text="Textures">
                            <font>
@@ -96,13 +105,16 @@
                            </VBox.margin>
                         </Text>
                         <Separator prefWidth="200.0" />
-                        <ScrollPane fx:id="texturesPane" fitToHeight="true" fitToWidth="true" prefViewportHeight="101.0" prefViewportWidth="600.0" />
+                        <ScrollPane fitToHeight="true" fitToWidth="true" prefViewportHeight="101.0" prefViewportWidth="600.0">
+                           <content>
+                              <TextArea fx:id="texturesList" prefHeight="200.0" prefWidth="200.0" promptText="Enter the textures names as a comma separated list." />
+                           </content></ScrollPane>
                      </children>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </VBox>
-                  <VBox layoutX="10.0" layoutY="226.0">
+                  <VBox layoutX="10.0" layoutY="226.0" prefHeight="168.0" prefWidth="600.0">
                      <children>
                         <Text fill="#5677fc" strokeType="OUTSIDE" strokeWidth="0.0" text="Colors">
                            <font>
@@ -113,46 +125,14 @@
                            </VBox.margin>
                         </Text>
                         <Separator prefWidth="200.0" />
-                        <ScrollPane fx:id="colorsPane" fitToHeight="true" fitToWidth="true" prefViewportHeight="101.0" prefViewportWidth="600.0" />
+                        <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="141.0" prefViewportHeight="101.0" prefViewportWidth="600.0" prefWidth="600.0">
+                           <content>
+                              <VBox fx:id="colorsPane" prefHeight="200.0" prefWidth="100.0" />
+                           </content>
+                        </ScrollPane>
                      </children>
                      <VBox.margin>
                         <Insets />
-                     </VBox.margin>
-                  </VBox>
-                  <VBox layoutX="10.0" layoutY="374.0">
-                     <children>
-                        <Separator prefWidth="200.0" />
-                        <HBox alignment="CENTER_LEFT" prefHeight="75.0">
-                           <children>
-                              <TextField prefWidth="275.0" promptText="File Location">
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </TextField>
-                              <Button mnemonicParsing="false" styleClass="btn" text="...">
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </Button>
-                              <TextField promptText="Mesh Instance Name">
-                                 <HBox.margin>
-                                    <Insets left="15.0" />
-                                 </HBox.margin>
-                              </TextField>
-                              <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="95.0">
-                                 <children>
-                                    <Button mnemonicParsing="false" prefWidth="75.0" styleClass="btn" text="Create">
-                                       <HBox.margin>
-                                          <Insets left="15.0" right="15.0" />
-                                       </HBox.margin>
-                                    </Button>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </HBox>
-                     </children>
-                     <VBox.margin>
-                        <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
                   </VBox>
                </children>
@@ -160,4 +140,34 @@
          </content>
       </ScrollPane>
    </center>
+   <bottom>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0">
+               <children>
+                  <TextField fx:id="filePath" prefHeight="26.0" prefWidth="375.0" promptText="File Location">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#selectFile" styleClass="btn" text="...">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="173.0">
+                     <children>
+                        <Button fx:id="btnCreate" mnemonicParsing="false" onAction="#createMeshInstance" prefHeight="26.0" prefWidth="150.0" styleClass="btn" text="Create Mesh Instance">
+                           <HBox.margin>
+                              <Insets left="15.0" right="15.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
 </BorderPane>

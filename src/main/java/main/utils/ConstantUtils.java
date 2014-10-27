@@ -33,6 +33,7 @@ public class ConstantUtils {
     public static String ROW_TEXTURES_LAYOUT = "layouts/textureRow.fxml";
     public static String FILE_BOX_TEXTURES_LAYOUT = "layouts/textureFileBox.fxml";
     public static String CAMERA_BOX_LAYOUT = "layouts/defaultBox.fxml";
+    public static String COLORS_BOX_LAYOUT = "layouts/colorBox.fxml";
 
     // Window title Strings
     public static String SELECT_TEXTURE = "Select Texture";

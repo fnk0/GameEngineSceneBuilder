@@ -1,10 +1,11 @@
 package main.controllers.individualElementsControllers;
 
-import javafx.scene.layout.Pane;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
+import main.controllers.abstractControllers.ControllerWithNode;
 import main.controllers.abstractControllers.ListController;
+import main.views.ColorBoxView;
 import main.views.DefaultView;
-
-import java.util.List;
 
 /**
  * Created by <a href="mailto:marcusandreog@gmail.com">Marcus Gabilheri</a>
@@ -13,15 +14,29 @@ import java.util.List;
  * @version 1.0
  * @since 10/16/14
  */
-public class ColorBoxController extends ListController {
+public class ColorBoxController extends ControllerWithNode {
 
-    @Override
-    public Pane getBoxPane() {
-        return null;
+    @FXML
+    private TextField red, blue, green, alpha;
+
+    private DefaultView colorView;
+
+    private ListController listController;
+
+    @FXML
+    public void addColor() {
+        colorView = new ColorBoxView();
+        ((ColorBoxController) colorView.getController()).setNodePosition(listController.getViewsList().size());
+        ((ColorBoxController) colorView.getController()).setListController(listController);
+        listController.addView(colorView);
     }
 
-    @Override
-    public List<DefaultView> getViewsList() {
-        return null;
+    @FXML
+    public void removeColor() {
+        listController.removeView(getNodePosition());
+    }
+
+    public void setListController(ListController listController) {
+        this.listController = listController;
     }
 }

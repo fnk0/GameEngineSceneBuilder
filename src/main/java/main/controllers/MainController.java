@@ -36,6 +36,7 @@ public class MainController extends DefaultController {
     private List<DefaultView> meshInstances;
     private List<DefaultView> textures;
     private List<DefaultView> lights;
+    private List<DefaultView> nodes;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -43,6 +44,7 @@ public class MainController extends DefaultController {
         meshInstances = new ArrayList<DefaultView>();
         textures = new ArrayList<DefaultView>();
         lights = new ArrayList<DefaultView>();
+        nodes = new ArrayList<DefaultView>();
         worldSettingsPane = new WorldSettingsView();
         cameraPane = new CameraView();
         meshesPane = new MeshesView();
