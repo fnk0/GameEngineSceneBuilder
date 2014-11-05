@@ -6,60 +6,32 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox prefWidth="750.0" stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.MeshInstancesFileBoxController">
+<HBox alignment="CENTER" minHeight="50.0" minWidth="600.0" stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.MeshInstancesFileBoxController">
    <children>
-      <HBox alignment="CENTER">
-         <children>
-            <VBox>
-               <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="700.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mesh Instance Name:" />
-                        <TextField fx:id="meshInstanceName" prefWidth="500.0" promptText="Required">
-                           <HBox.margin>
-                              <Insets left="15.0" />
-                           </HBox.margin>
-                        </TextField>
-                     </children>
-                     <VBox.margin>
-                        <Insets left="15.0" right="15.0" top="15.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="25.0" prefHeight="50.0" prefWidth="200.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Load from File:" />
-                        <TextField fx:id="meshInstanceFilePath" prefWidth="500.0" promptText="Required">
-                           <HBox.margin>
-                              <Insets left="15.0" />
-                           </HBox.margin>
-                        </TextField>
-                        <Button mnemonicParsing="false" onAction="#selectMeshInstanceLocation" styleClass="btn" text="...">
-                           <HBox.margin>
-                              <Insets left="15.0" />
-                           </HBox.margin>
-                        </Button>
-                     </children>
-                     <padding>
-                        <Insets left="15.0" right="15.0" />
-                     </padding>
-                  </HBox>
-               </children>
-            </VBox>
-            <VBox prefHeight="115.0" prefWidth="105.0">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#addMeshInstance" prefHeight="43.0" prefWidth="58.0" styleClass="btn" stylesheets="@../stylesheets/style.css" text="+">
-                     <VBox.margin>
-                        <Insets bottom="10.0" right="10.0" top="10.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#removeMeshInstance" prefHeight="43.0" prefWidth="58.0" styleClass="btn-red" text="-">
-                     <VBox.margin>
-                        <Insets right="10.0" />
-                     </VBox.margin>
-                  </Button>
-               </children>
-            </VBox>
-         </children>
-      </HBox>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Load from File:">
+         <HBox.margin>
+            <Insets left="15.0" />
+         </HBox.margin>
+      </Text>
+      <TextField fx:id="meshInstanceFilePath" prefWidth="450.0" promptText="Required">
+         <HBox.margin>
+            <Insets left="15.0" />
+         </HBox.margin>
+      </TextField>
+      <Button mnemonicParsing="false" onAction="#selectMeshInstanceLocation" styleClass="btn" text="...">
+         <HBox.margin>
+            <Insets left="15.0" />
+         </HBox.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#removeMeshInstance" prefHeight="35.0" prefWidth="45.0" styleClass="btn-red" text="-">
+         <HBox.margin>
+            <Insets left="25.0" />
+         </HBox.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#addMeshInstance" prefHeight="35.0" prefWidth="45.0" styleClass="btn" stylesheets="@../stylesheets/style.css" text="+">
+         <HBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </HBox.margin>
+      </Button>
    </children>
-</VBox>
+</HBox>

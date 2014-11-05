@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="600.0" styleClass="panel" stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.individualStagesControllers.CreateLightController">
+   <children>
+      <HBox alignment="BOTTOM_RIGHT" minWidth="600.0" prefHeight="75.0" style="-fx-background-color: #5677fc;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="New Light">
+               <font>
+                  <Font size="39.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="25.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </HBox>
+      <ScrollPane hbarPolicy="NEVER" layoutX="206.0" layoutY="139.0" styleClass="panel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+        <content>
+          <AnchorPane minWidth="600.0" prefHeight="513.0" prefWidth="600.0">
+               <children>
+                  <VBox prefHeight="500.0" styleClass="panel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                              <TextField fx:id="lightName" prefHeight="26.0" prefWidth="282.0" promptText="Required">
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0" prefHeight="50.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Type" />
+                              <ComboBox fx:id="type" editable="true">
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Direction" />
+                              <TextField fx:id="drX" prefHeight="26.0" prefWidth="75.0" promptText="X">
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="drY" layoutX="157.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="Y">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="drZ" layoutX="232.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="Z">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="drW" prefHeight="26.0" prefWidth="75.0" promptText="W">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Position" />
+                              <TextField fx:id="posX" prefHeight="26.0" prefWidth="75.0" promptText="X">
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="posY" layoutX="157.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="Y">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="posZ" layoutX="232.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="Z">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="posW" layoutX="298.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="W">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Attenuation" />
+                              <TextField fx:id="atteX" prefHeight="26.0" prefWidth="75.0" promptText="X">
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="atteY" layoutX="157.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="Y">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="atteZ" layoutX="232.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="Z">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="220.0" prefHeight="50.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Color" />
+                              <TextField fx:id="red" prefHeight="26.0" prefWidth="75.0" promptText="R">
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="green" layoutX="157.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="G">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="blue" layoutX="232.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="B">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="alpha" prefHeight="26.0" prefWidth="75.0" promptText="A">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="270.0" prefHeight="50.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cone Angles" />
+                              <TextField fx:id="caX" prefHeight="26.0" prefWidth="75.0" promptText="X">
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="caY" layoutX="157.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="Y">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="caZ" layoutX="232.0" layoutY="22.0" prefHeight="26.0" prefWidth="75.0" promptText="Z">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <TextField fx:id="caW" prefHeight="26.0" prefWidth="75.0" promptText="W">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Separator prefWidth="200.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <HBox alignment="CENTER_RIGHT" prefHeight="60.0" styleClass="panel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <TextField fx:id="outputLocation" prefHeight="26.0" prefWidth="385.0" promptText="File Output Location" />
+            <Button mnemonicParsing="false" onAction="#selectFile" styleClass="btn" text="...">
+               <HBox.margin>
+                  <Insets left="15.0" right="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnCreateNode" mnemonicParsing="false" onAction="#createNewLight" styleClass="btn" text="Create New Node">
+               <HBox.margin>
+                  <Insets left="15.0" right="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

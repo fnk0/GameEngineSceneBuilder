@@ -5,6 +5,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import main.controllers.abstractControllers.DefaultController;
+import main.models.SceneModel;
 import main.utils.CustomUtils;
 import main.views.*;
 
@@ -32,19 +33,19 @@ public class MainController extends DefaultController {
 
     private DefaultView worldSettingsPane, cameraPane, meshesPane, meshInstancesPane, texturesPane, lightsPane, nodesPane;
 
-    private List<DefaultView> meshes;
-    private List<DefaultView> meshInstances;
-    private List<DefaultView> textures;
-    private List<DefaultView> lights;
-    private List<DefaultView> nodes;
+    private List<SceneModel> meshes;
+    private List<SceneModel> meshInstances;
+    private List<SceneModel> textures;
+    private List<SceneModel> lights;
+    private List<SceneModel> nodes;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        meshes = new ArrayList<DefaultView>();
-        meshInstances = new ArrayList<DefaultView>();
-        textures = new ArrayList<DefaultView>();
-        lights = new ArrayList<DefaultView>();
-        nodes = new ArrayList<DefaultView>();
+        meshes = new ArrayList<SceneModel>();
+        meshInstances = new ArrayList<SceneModel>();
+        textures = new ArrayList<SceneModel>();
+        lights = new ArrayList<SceneModel>();
+        nodes = new ArrayList<SceneModel>();
         worldSettingsPane = new WorldSettingsView();
         cameraPane = new CameraView();
         meshesPane = new MeshesView();

@@ -1,0 +1,14 @@
+{
+  "name" : "cube",
+  "mesh" : "cubeMesh",
+  "vertexShader" : "someShader.vs",
+  "fragmentShader" : "someFrag.fs",
+  "textures" : [ {
+    "texName" : "someTex",
+    "texType" : "uDiffuseTex"
+  } ],
+  "colors" : [ {
+    "type" : "uDiffuseColor",
+    "value" : [ 0.0, 0.0, 0.0, 1.0 ]
+  } ]
+}

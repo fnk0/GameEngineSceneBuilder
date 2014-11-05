@@ -6,6 +6,9 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import main.controllers.abstractControllers.ListController;
+import main.interfaces.ListData;
+import main.models.MeshInstance;
+import main.models.SceneModel;
 import main.views.CreateMeshInstanceView;
 import main.views.DefaultView;
 import main.views.MeshInstanceFileBoxView;
@@ -22,7 +25,7 @@ import java.util.ResourceBundle;
  * @version 1.0
  * @since 10/14/14
  */
-public class MeshInstancesController extends ListController {
+public class MeshInstancesController extends ListController implements ListData {
 
     @FXML
     private VBox instancesPanel;
@@ -56,5 +59,14 @@ public class MeshInstancesController extends ListController {
     @Override
     public List<DefaultView> getViewsList() {
         return instanceViews;
+    }
+
+    @Override
+    public ArrayList<SceneModel> getListModelData() {
+        for(DefaultView v : instanceViews) {
+            MeshInstance instance = (MeshInstance) v.getController().getModelData();
+            modelData.add(instance);
+        }
+        return modelData;
     }
 }

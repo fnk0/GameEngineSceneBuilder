@@ -41,7 +41,7 @@ public class DefaultFileBoxController extends ControllerWithNode {
 
     @FXML
     public void selectFile() {
-        filePath.setText(CustomUtils.getFile(ConstantUtils.SELECT_CAMERA, new FileChooser.ExtensionFilter[]{CustomUtils.getJsonFilter()}));
+        filePath.setText(CustomUtils.getFile(ConstantUtils.SELECT_CAMERA, new FileChooser.ExtensionFilter[]{CustomUtils.getJsonFilter()}).getAbsolutePath());
     }
 
     public void setListController(ListController listController) {

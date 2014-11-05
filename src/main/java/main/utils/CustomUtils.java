@@ -159,14 +159,14 @@ public class CustomUtils {
         }
     }
 
-    public static String getFile(String windowTitle, FileChooser.ExtensionFilter[] filters) {
+    public static File getFile(String windowTitle, FileChooser.ExtensionFilter[] filters) {
         FileChooser chooser = new FileChooser();
         chooser.setTitle(windowTitle);
         chooser.getExtensionFilters().addAll(filters);
         File mFile = chooser.showOpenDialog(null);
 
-        if(mFile != null) {
-            return mFile.getAbsolutePath().toString() + "/" + mFile.getName();
+        if (mFile != null) {
+            return mFile;
         } else {
             return null;
         }
@@ -175,15 +175,14 @@ public class CustomUtils {
     /**
      *
      * @param filePath
-     * @param fileName
      * @param readModel
      * @return
      */
-    public static SceneModel readJsonFile(String filePath, String fileName, SceneModel readModel) {
+    public static SceneModel readJsonFile(String filePath, SceneModel readModel) {
         ObjectMapper mapper = new ObjectMapper();
         SceneModel model = null;
         try {
-            model = mapper.readValue(new File(filePath + "/" + fileName), readModel.getClass());
+            model = mapper.readValue(new File(filePath), readModel.getClass());
         } catch (JsonGenerationException ex) {
             ex.printStackTrace();
         } catch (JsonMappingException ex) {

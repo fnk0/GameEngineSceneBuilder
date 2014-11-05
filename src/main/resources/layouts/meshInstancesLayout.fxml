@@ -6,32 +6,30 @@
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 
-<Pane stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.MeshInstancesController">
+<Pane styleClass="panel" stylesheets="@../stylesheets/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.MeshInstancesController">
    <children>
-      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="790.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Mesh Instances">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="790.0">
+  <AnchorPane minHeight="0.0" minWidth="0.0">
+         <children>
+            <Text fill="#5677fc" strokeType="OUTSIDE" strokeWidth="0.0" text="Mesh Instances" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Separator prefWidth="200.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="40.0" />
+            <VBox prefHeight="65.0" styleClass="panel" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="65.0">
                      <children>
-                        <ScrollPane prefHeight="469.0" prefViewportHeight="547.0" prefViewportWidth="790.0" prefWidth="792.0">
-                           <content>
-                              <VBox fx:id="instancesPanel" layoutX="144.0" layoutY="52.0" prefHeight="200.0" prefWidth="775.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="600.0">
-                                       <children>
-                                          <Button mnemonicParsing="false" onAction="#createMeshInstance" styleClass="btn" text="Create New Mesh Instance" />
-                                       </children>
-                                    </HBox>
-                                 </children>
-                              </VBox>
-                           </content>
-                        </ScrollPane>
+                        <Button mnemonicParsing="false" onAction="#createMeshInstance" styleClass="btn" text="Create New Mesh Instance" />
                      </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-        </tabs>
-      </TabPane>
+                  </HBox>
+               </children>
+            </VBox>
+            <ScrollPane prefViewportHeight="547.0" prefViewportWidth="790.0" styleClass="panel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="115.0">
+               <content>
+                  <VBox fx:id="instancesPanel" styleClass="panel" />
+               </content></ScrollPane>
+         </children>
+      </AnchorPane>
    </children>
 </Pane>

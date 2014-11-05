@@ -1,0 +1,23 @@
+{
+  "name" : "test2",
+  "mesh" : "cubeMesh",
+  "vertexShader" : "vShader.vs",
+  "fragmentShader" : "fShader.fs",
+  "textures" : [ {
+    "texName" : "someTex",
+    "texType" : "uOtherTex"
+  }, {
+    "texName" : "anotherTex",
+    "texType" : "uDiffuseTex"
+  }, {
+    "texName" : "thirdTex",
+    "texType" : "customTex"
+  } ],
+  "colors" : [ {
+    "type" : "uDiffuseColor",
+    "value" : [ 0.0, 0.0, 0.0, 1.0 ]
+  }, {
+    "type" : "phongColor",
+    "value" : [ 1.0, 0.0, 0.0, 1.0 ]
+  } ]
+}

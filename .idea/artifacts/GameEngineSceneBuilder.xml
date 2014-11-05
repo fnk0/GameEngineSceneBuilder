@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="GameEngineSceneBuilder">
+    <output-path>$PROJECT_DIR$/out/artifacts/GameEngineSceneBuilder</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="main.SceneBuilder" />
+        <option name="description" value="" />
+        <option name="htmlParamFile" value="" />
+        <option name="nativeBundle" value="dmg" />
+        <option name="paramFile" value="" />
+        <option name="title" value="Game Scene Builder" />
+        <option name="vendor" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="GameEngineSceneBuilder.jar">
+        <element id="module-output" name="GameEngineSceneBuilder" />
+      </element>
+    </root>
+  </artifact>
+</component>

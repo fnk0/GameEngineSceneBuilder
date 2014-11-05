@@ -5,6 +5,9 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import main.controllers.abstractControllers.ListController;
 import main.controllers.individualElementsControllers.MeshController;
+import main.interfaces.ListData;
+import main.models.Mesh;
+import main.models.SceneModel;
 import main.views.DefaultView;
 import main.views.MeshView;
 
@@ -20,7 +23,7 @@ import java.util.ResourceBundle;
  * @version 1.0
  * @since 10/14/14
  */
-public class MeshesController extends ListController {
+public class MeshesController extends ListController implements ListData {
 
     @FXML
     private VBox meshesPanel;
@@ -47,4 +50,12 @@ public class MeshesController extends ListController {
         return meshViews;
     }
 
+    @Override
+    public ArrayList<SceneModel> getListModelData() {
+        for(DefaultView v : meshViews) {
+            Mesh m = (Mesh) v.getController().getModelData();
+            modelData.add(m);
+        }
+        return modelData;
+    }
 }
