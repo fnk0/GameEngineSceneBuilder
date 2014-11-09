@@ -6,7 +6,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import main.controllers.abstractControllers.ListController;
-import main.controllers.individualElementsControllers.DefaultFileBoxController;
+import main.controllers.individualElementsControllers.CameraFileBoxController;
 import main.interfaces.ListData;
 import main.models.SceneModel;
 import main.views.DefaultBoxView;
@@ -46,7 +46,7 @@ public class CameraController extends ListController implements ListData {
         super.initialize(location, resources);
         camerasViews = new ArrayList<DefaultView>();
         DefaultBoxView cBoxView = new DefaultBoxView();
-        ((DefaultFileBoxController) cBoxView.getController()).setListController(this);
+        ((CameraFileBoxController) cBoxView.getController()).setListController(this);
         camerasViews.add(cBoxView);
         camerasPanel.getChildren().add(cBoxView);
     }
@@ -63,10 +63,10 @@ public class CameraController extends ListController implements ListData {
 
     @Override
     public ArrayList<SceneModel> getListModelData() {
-
+        ArrayList<SceneModel> models = new ArrayList<>();
         for(DefaultView v : camerasViews) {
-            modelData.add(v.getController().getModelData());
+            models.add(v.getController().getModelData());
         }
-        return modelData;
+        return models;
     }
 }

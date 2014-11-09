@@ -6,12 +6,12 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import main.controllers.abstractControllers.ListController;
-import main.controllers.individualElementsControllers.DefaultFileBoxController;
+import main.controllers.individualElementsControllers.NodeBoxController;
 import main.interfaces.ListData;
 import main.models.SceneModel;
-import main.views.DefaultBoxView;
 import main.views.DefaultView;
 import main.views.NewNodeView;
+import main.views.NodeFileBoxView;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ import java.util.ResourceBundle;
  * @version 1.0
  * @since 10/26/14
  */
-public class NodesController extends ListController implements ListData{
+public class NodesController extends ListController implements ListData {
 
     @FXML
     private VBox nodesPanel;
@@ -36,10 +36,10 @@ public class NodesController extends ListController implements ListData{
     public void initialize(URL location, ResourceBundle resources) {
         super.initialize(location, resources);
         nodesViews = new ArrayList<DefaultView>();
-        DefaultBoxView cBoxView = new DefaultBoxView();
-        ((DefaultFileBoxController) cBoxView.getController()).setListController(this);
-        nodesViews.add(cBoxView);
-        nodesPanel.getChildren().add(cBoxView);
+        NodeFileBoxView nodeBoxView = new NodeFileBoxView();
+        ((NodeBoxController) nodeBoxView.getController()).setController(this);
+        nodesViews.add(nodeBoxView);
+        nodesPanel.getChildren().add(nodeBoxView);
     }
 
     @FXML
@@ -63,9 +63,10 @@ public class NodesController extends ListController implements ListData{
 
     @Override
     public ArrayList<SceneModel> getListModelData() {
+        ArrayList<SceneModel> models = new ArrayList<>();
         for(DefaultView v : nodesViews) {
-            modelData.add(v.getController().getModelData());
+            models.add(v.getController().getModelData());
         }
-        return modelData;
+        return models;
     }
 }

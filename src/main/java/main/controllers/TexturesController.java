@@ -51,9 +51,10 @@ public class TexturesController extends ListController implements ListData {
 
     @Override
     public ArrayList<SceneModel> getListModelData() {
+        ArrayList<SceneModel> models = new ArrayList<>();
         for(DefaultView v : texturesView) {
-            modelData.add(v.getController().getModelData());
+            models.add(v.getController().getModelData());
         }
-        return modelData;
+        return models;
     }
 }

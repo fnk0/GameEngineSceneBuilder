@@ -63,10 +63,11 @@ public class MeshInstancesController extends ListController implements ListData 
 
     @Override
     public ArrayList<SceneModel> getListModelData() {
+        ArrayList<SceneModel> models = new ArrayList<>();
         for(DefaultView v : instanceViews) {
             MeshInstance instance = (MeshInstance) v.getController().getModelData();
-            modelData.add(instance);
+            models.add(instance);
         }
-        return modelData;
+        return models;
     }
 }

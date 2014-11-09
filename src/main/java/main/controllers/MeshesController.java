@@ -51,9 +51,10 @@ public class MeshesController extends ListController implements ListData {
 
     @Override
     public ArrayList<SceneModel> getListModelData() {
+        ArrayList<SceneModel> models = new ArrayList<>();
         for(DefaultView v : meshViews) {
-            modelData.add(v.getController().getModelData());
+            models.add(v.getController().getModelData());
         }
-        return modelData;
+        return models;
     }
 }

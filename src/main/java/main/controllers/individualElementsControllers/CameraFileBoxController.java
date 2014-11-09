@@ -21,7 +21,7 @@ import java.io.File;
  * @version 1.0
  * @since 10/26/14
  */
-public class DefaultFileBoxController extends ControllerWithNode {
+public class CameraFileBoxController extends ControllerWithNode {
 
     @FXML
     private TextField filePath;
@@ -35,8 +35,8 @@ public class DefaultFileBoxController extends ControllerWithNode {
     @FXML
     public void addBox() {
         defaultBoxView = new DefaultBoxView();
-        ((DefaultFileBoxController) defaultBoxView.getController()).setNodePosition(listController.getViewsList().size());
-        ((DefaultFileBoxController) defaultBoxView.getController()).setListController(listController);
+        ((CameraFileBoxController) defaultBoxView.getController()).setNodePosition(listController.getViewsList().size());
+        ((CameraFileBoxController) defaultBoxView.getController()).setListController(listController);
         listController.addView(defaultBoxView);
     }
 

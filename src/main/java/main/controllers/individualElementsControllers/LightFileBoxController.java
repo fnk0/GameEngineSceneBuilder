@@ -34,6 +34,7 @@ public class LightFileBoxController extends ControllerWithNode {
         LightFileBoxView lightFileBoxView = new LightFileBoxView();
         ((LightFileBoxController) lightFileBoxView.getController()).setNodePosition(controller.getViewsList().size());
         ((LightFileBoxController) lightFileBoxView.getController()).setController(controller);
+        controller.addView(lightFileBoxView);
     }
 
     @FXML
@@ -46,7 +47,7 @@ public class LightFileBoxController extends ControllerWithNode {
         File f = CustomUtils.getFile(ConstantUtils.SELECT_MESH_INSTANCE, new FileChooser.ExtensionFilter[]{CustomUtils.getJsonFilter()});
         fileLocation.setText(f.getAbsolutePath());
         light = CustomUtils.readJsonFile(fileLocation.getText(), new Light());
-        System.out.println(light.toJson());
+        //System.out.println(light.toJson());
     }
 
     public void setController(LightsController controller) {

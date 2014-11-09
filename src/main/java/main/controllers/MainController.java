@@ -99,7 +99,7 @@ public class MainController extends DefaultController {
         scene.setTextures(((TexturesController) texturesPane.getController()).getListModelData());
         scene.setMeshInstances(((MeshInstancesController) meshInstancesPane.getController()).getListModelData());
         scene.setMeshes(((MeshesController) meshesPane.getController()).getListModelData());
-
+        scene.setCameras(((CameraController) cameraPane.getController()).getListModelData());
         CustomUtils.createJsonFile(scene, outputLocation.getText(), fileName.getText());
     }
 

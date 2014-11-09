@@ -36,6 +36,7 @@ public class ConstantUtils {
     public static String CAMERA_BOX_LAYOUT = "layouts/defaultBox.fxml";
     public static String COLORS_BOX_LAYOUT = "layouts/colorBox.fxml";
     public static String LIGHT_BOX_LAYOUT = "layouts/lightFileBox.fxml";
+    public static String NODE_BOX_LAYOUT = "layouts/nodeBoxLayout.fxml";
 
     // Window title Strings
     public static String SELECT_TEXTURE = "Select Texture";
