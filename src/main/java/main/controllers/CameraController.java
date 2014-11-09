@@ -7,6 +7,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import main.controllers.abstractControllers.ListController;
 import main.controllers.individualElementsControllers.DefaultFileBoxController;
+import main.interfaces.ListData;
+import main.models.SceneModel;
 import main.views.DefaultBoxView;
 import main.views.DefaultView;
 import main.views.NewCameraView;
@@ -23,7 +25,7 @@ import java.util.ResourceBundle;
  * @version 1.0
  * @since 10/14/14
  */
-public class CameraController extends ListController {
+public class CameraController extends ListController implements ListData {
 
     @FXML
     private VBox camerasPanel;
@@ -57,5 +59,14 @@ public class CameraController extends ListController {
     @Override
     public List<DefaultView> getViewsList() {
         return camerasViews;
+    }
+
+    @Override
+    public ArrayList<SceneModel> getListModelData() {
+
+        for(DefaultView v : camerasViews) {
+            modelData.add(v.getController().getModelData());
+        }
+        return modelData;
     }
 }

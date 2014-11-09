@@ -7,6 +7,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import main.controllers.abstractControllers.ListController;
 import main.controllers.individualElementsControllers.DefaultFileBoxController;
+import main.interfaces.ListData;
+import main.models.SceneModel;
 import main.views.DefaultBoxView;
 import main.views.DefaultView;
 import main.views.NewNodeView;
@@ -23,7 +25,7 @@ import java.util.ResourceBundle;
  * @version 1.0
  * @since 10/26/14
  */
-public class NodesController extends ListController {
+public class NodesController extends ListController implements ListData{
 
     @FXML
     private VBox nodesPanel;
@@ -57,5 +59,13 @@ public class NodesController extends ListController {
     @Override
     public List<DefaultView> getViewsList() {
         return nodesViews;
+    }
+
+    @Override
+    public ArrayList<SceneModel> getListModelData() {
+        for(DefaultView v : nodesViews) {
+            modelData.add(v.getController().getModelData());
+        }
+        return modelData;
     }
 }

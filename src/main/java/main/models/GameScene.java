@@ -10,7 +10,7 @@ import java.util.List;
  * @version 1.0
  * @since 10/13/14
  */
-public class GameScene {
+public class GameScene extends SceneModel {
 
     private SceneModel worldSettings;
     private List<SceneModel> cameras;
@@ -18,6 +18,7 @@ public class GameScene {
     private List<SceneModel> meshInstances;
     private List<SceneModel> textures;
     private List<SceneModel> lights;
+    private List<SceneModel> nodes;
 
     public GameScene() {
         this.worldSettings = new WorldSettings();
@@ -26,6 +27,7 @@ public class GameScene {
         this.meshInstances = new ArrayList<SceneModel>();
         this.textures = new ArrayList<SceneModel>();
         this.lights = new ArrayList<SceneModel>();
+        this.nodes = new ArrayList<>();
     }
 
     public SceneModel getWorldSettings() {
@@ -74,5 +76,13 @@ public class GameScene {
 
     public void setLights(List<SceneModel> lights) {
         this.lights = lights;
+    }
+
+    public List<SceneModel> getNodes() {
+        return nodes;
+    }
+
+    public void setNodes(List<SceneModel> nodes) {
+        this.nodes = nodes;
     }
 }

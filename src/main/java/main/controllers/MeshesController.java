@@ -6,7 +6,6 @@ import javafx.scene.layout.VBox;
 import main.controllers.abstractControllers.ListController;
 import main.controllers.individualElementsControllers.MeshController;
 import main.interfaces.ListData;
-import main.models.Mesh;
 import main.models.SceneModel;
 import main.views.DefaultView;
 import main.views.MeshView;
@@ -53,8 +52,7 @@ public class MeshesController extends ListController implements ListData {
     @Override
     public ArrayList<SceneModel> getListModelData() {
         for(DefaultView v : meshViews) {
-            Mesh m = (Mesh) v.getController().getModelData();
-            modelData.add(m);
+            modelData.add(v.getController().getModelData());
         }
         return modelData;
     }

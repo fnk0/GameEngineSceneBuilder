@@ -1,6 +1,7 @@
 package main.controllers.individualStagesControllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import main.controllers.abstractControllers.DefaultController;
@@ -25,6 +26,9 @@ public class CreateLightController extends DefaultController {
 
     @FXML
     ComboBox<String> type;
+
+    @FXML
+    Button btnCreateLight;
 
     @FXML
     public void selectFile() {
@@ -62,6 +66,6 @@ public class CreateLightController extends DefaultController {
         l.getConeAngles()[3] = Double.parseDouble(caW.getText());
 
         CustomUtils.createJsonFile(l, outputLocation.getText(), l.getName());
-
+        CustomUtils.closeStage(btnCreateLight);
     }
 }

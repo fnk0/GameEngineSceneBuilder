@@ -5,6 +5,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import main.controllers.abstractControllers.ListController;
 import main.controllers.individualElementsControllers.TextureBoxController;
+import main.interfaces.ListData;
+import main.models.SceneModel;
 import main.views.DefaultView;
 import main.views.TextureFileBoxView;
 
@@ -20,7 +22,7 @@ import java.util.ResourceBundle;
  * @version 1.0
  * @since 10/14/14
  */
-public class TexturesController extends ListController {
+public class TexturesController extends ListController implements ListData {
 
     @FXML
     private VBox texturesPanel;
@@ -45,5 +47,13 @@ public class TexturesController extends ListController {
     @Override
     public List<DefaultView> getViewsList() {
         return texturesView;
+    }
+
+    @Override
+    public ArrayList<SceneModel> getListModelData() {
+        for(DefaultView v : texturesView) {
+            modelData.add(v.getController().getModelData());
+        }
+        return modelData;
     }
 }

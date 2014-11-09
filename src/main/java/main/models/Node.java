@@ -21,10 +21,10 @@ public class Node extends SceneModel {
         this.scale = new double[3];
         this.rotation = new double[4];
         this.translation = new double[3];
-        this.name = "";
-        this.parent = "";
-        this.meshInstance = "";
-        this.backgroundMusic = "";
+        this.name = "testNode";
+        this.parent = "someNode";
+        this.meshInstance = "cubeInstance";
+        this.backgroundMusic = "background.mp3";
         this.isBillboard = false;
     }
 

@@ -5,13 +5,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import main.controllers.abstractControllers.DefaultController;
-import main.models.SceneModel;
+import main.models.GameScene;
 import main.utils.CustomUtils;
 import main.views.*;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -33,19 +31,8 @@ public class MainController extends DefaultController {
 
     private DefaultView worldSettingsPane, cameraPane, meshesPane, meshInstancesPane, texturesPane, lightsPane, nodesPane;
 
-    private List<SceneModel> meshes;
-    private List<SceneModel> meshInstances;
-    private List<SceneModel> textures;
-    private List<SceneModel> lights;
-    private List<SceneModel> nodes;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        meshes = new ArrayList<SceneModel>();
-        meshInstances = new ArrayList<SceneModel>();
-        textures = new ArrayList<SceneModel>();
-        lights = new ArrayList<SceneModel>();
-        nodes = new ArrayList<SceneModel>();
         worldSettingsPane = new WorldSettingsView();
         cameraPane = new CameraView();
         meshesPane = new MeshesView();
@@ -105,7 +92,15 @@ public class MainController extends DefaultController {
 
     @FXML
     public void createScene() {
+        GameScene scene = new GameScene();
+        scene.setWorldSettings(worldSettingsPane.getController().getModelData());
+        scene.setNodes(((NodesController) nodesPane.getController()).getListModelData());
+        scene.setLights(((LightsController) lightsPane.getController()).getListModelData());
+        scene.setTextures(((TexturesController) texturesPane.getController()).getListModelData());
+        scene.setMeshInstances(((MeshInstancesController) meshInstancesPane.getController()).getListModelData());
+        scene.setMeshes(((MeshesController) meshesPane.getController()).getListModelData());
 
+        CustomUtils.createJsonFile(scene, outputLocation.getText(), fileName.getText());
     }
 
 }

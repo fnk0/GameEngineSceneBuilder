@@ -5,6 +5,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import main.controllers.MeshesController;
 import main.controllers.abstractControllers.ControllerWithNode;
+import main.models.Mesh;
+import main.models.SceneModel;
 import main.utils.ConstantUtils;
 import main.utils.CustomUtils;
 import main.views.MeshView;
@@ -47,5 +49,11 @@ public class MeshController extends ControllerWithNode {
         this.meshesController = meshesController;
     }
 
-
+    @Override
+    public SceneModel getModelData() {
+        Mesh mesh = new Mesh();
+        mesh.setName(meshName.getText());
+        mesh.setFile(meshFilePath.getText());
+        return mesh;
+    }
 }

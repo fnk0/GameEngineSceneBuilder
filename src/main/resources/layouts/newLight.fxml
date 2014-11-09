@@ -188,7 +188,7 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="btnCreateNode" mnemonicParsing="false" onAction="#createNewLight" styleClass="btn" text="Create New Node">
+            <Button fx:id="btnCreateLight" mnemonicParsing="false" onAction="#createNewLight" styleClass="btn" text="Create New Light">
                <HBox.margin>
                   <Insets left="15.0" right="15.0" />
                </HBox.margin>
