@@ -11,6 +11,10 @@ import main.models.SceneModel;
 import main.utils.ConstantUtils;
 import main.utils.CustomUtils;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by <a href="mailto:marcusandreog@gmail.com">Marcus Gabilheri</a>
  *
@@ -21,7 +25,7 @@ import main.utils.CustomUtils;
 public class CreateNewNodeController extends DefaultController {
 
     @FXML
-    private TextField nodeName, parentNode, meshInstance, backgroundMusic, outputLocation;
+    private TextField nodeName, parentNode, meshInstance, backgroundMusic, outputLocation, scripts;
 
     @FXML
     private TextField trX, trY, trZ, rtX, rtY, rtZ, rtW, scX, scY, scZ;
@@ -34,10 +38,39 @@ public class CreateNewNodeController extends DefaultController {
 
     private Node node;
 
+    private StringBuilder builder = new StringBuilder();
+
+    private ArrayList<String> scriptsList = new ArrayList<>();
+
     @FXML
     public void createNewNode() {
         CustomUtils.createJsonFile(getModelData(), outputLocation.getText(), nodeName.getText());
         CustomUtils.closeStage(btnCreateNode);
+    }
+
+    @FXML
+    public void selectScripts() {
+        FileChooser chooser = new FileChooser();
+        List<File> list =
+                chooser.showOpenMultipleDialog(getRootNode().getScene().getWindow());
+        if (list != null) {
+            for (File file : list) {
+                builder.append(file.getName()).append(" ");
+            }
+        }
+
+        scripts.setText(builder.toString());
+
+    }
+
+    @FXML
+    public void selectParent() {
+        parentNode.setText(CustomUtils.getFileNameWithoutPath("Select Parent Node", new FileChooser.ExtensionFilter[]{CustomUtils.getJsonFilter()}).replace(".json", ""));
+    }
+
+    @FXML
+    public void selectInstance() {
+        meshInstance.setText(CustomUtils.getFileNameWithoutPath("Select Mesh Instance", new FileChooser.ExtensionFilter[]{CustomUtils.getJsonFilter()}).replace(".json", ""));
     }
 
     @FXML
@@ -108,6 +141,14 @@ public class CreateNewNodeController extends DefaultController {
         if(CustomUtils.isTextNumValid(scZ)) {
             node.getScale()[2] = Double.parseDouble(scZ.getText());
         }
+
+        String[] scriptArray = scripts.getText().split(" ");
+
+        for(String s : scriptArray) {
+            scriptsList.add(s);
+        }
+
+        node.setScripts(scriptsList);
 
         node.setBillboard(isBillboard.isSelected());
 

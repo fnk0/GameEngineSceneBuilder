@@ -43,39 +43,39 @@ public class Light extends SceneModel {
         return uLightDirection;
     }
 
-    public void setDirection(double[] direction) {
-        this.uLightDirection = direction;
+    public void setDirection(double[] uLightDirection) {
+        this.uLightDirection = uLightDirection;
     }
 
     public double[] getPosition() {
         return uLightPosition;
     }
 
-    public void setPosition(double[] position) {
-        this.uLightPosition = position;
+    public void setPosition(double[] uLightPosition) {
+        this.uLightPosition = uLightPosition;
     }
 
     public double[] getAttenuation() {
         return uAttenuation;
     }
 
-    public void setAttenuation(double[] attenuation) {
-        this.uAttenuation = attenuation;
+    public void setAttenuation(double[] uAttenuation) {
+        this.uAttenuation = uAttenuation;
     }
 
     public double[] getColor() {
         return uLightColor;
     }
 
-    public void setColor(double[] color) {
-        this.uLightColor = color;
+    public void setColor(double[] uLightColor) {
+        this.uLightColor = uLightColor;
     }
 
     public double[] getConeAngles() {
         return uConeAngles;
     }
 
-    public void setConeAngles(double[] coneAngles) {
-        this.uConeAngles = coneAngles;
+    public void setConeAngles(double[] uConeAngles) {
+        this.uConeAngles = uConeAngles;
     }
 }

@@ -193,6 +193,27 @@
                   <Insets left="10.0" />
                </padding>
             </HBox>
+            <HBox fx:id="tileEditor" alignment="CENTER_LEFT" layoutX="10.0" layoutY="363.0" onMouseClicked="#selectTileEditor" prefHeight="50.0" prefWidth="200.0" styleClass="listSelector" stylesheets="@../stylesheets/style.css">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tile Editor">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="155.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/arrow_right.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
          </children>
       </VBox>
    </left>

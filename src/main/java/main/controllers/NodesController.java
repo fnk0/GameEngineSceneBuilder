@@ -65,7 +65,10 @@ public class NodesController extends ListController implements ListData {
     public ArrayList<SceneModel> getListModelData() {
         ArrayList<SceneModel> models = new ArrayList<>();
         for(DefaultView v : nodesViews) {
-            models.add(v.getController().getModelData());
+            List<SceneModel> nodesList = ((NodeBoxController)v.getController()).getListModelData();
+            for(SceneModel s : nodesList) {
+                models.add(s);
+            }
         }
         return models;
     }

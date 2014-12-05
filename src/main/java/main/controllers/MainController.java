@@ -29,7 +29,8 @@ public class MainController extends DefaultController {
 
     private BorderPane middlePane;
 
-    private DefaultView worldSettingsPane, cameraPane, meshesPane, meshInstancesPane, texturesPane, lightsPane, nodesPane;
+    private DefaultView worldSettingsPane, cameraPane, meshesPane, meshInstancesPane;
+    private DefaultView texturesPane, lightsPane, nodesPane, tileEditorPane;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -40,6 +41,7 @@ public class MainController extends DefaultController {
         texturesPane = new TextureView();
         lightsPane = new LightsView();
         nodesPane = new NodesView();
+        tileEditorPane = new TileEditorView();
 
         middlePane = new BorderPane();
 
@@ -83,6 +85,11 @@ public class MainController extends DefaultController {
     @FXML
     public void selectNodes() {
         middlePane.setCenter(nodesPane);
+    }
+
+    @FXML
+    public void selectTileEditor() {
+        middlePane.setCenter(tileEditorPane);
     }
 
     @FXML

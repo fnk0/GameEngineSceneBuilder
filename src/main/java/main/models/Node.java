@@ -11,10 +11,12 @@ import java.util.ArrayList;
  */
 public class Node extends SceneModel {
 
-    private String name, parent, meshInstance, backgroundMusic;
+    private String name, parent, meshInstance, backgroundMusic,camera;
     private double[] scale, rotation, translation;
-    private ArrayList<String> children;
-    private boolean isBillboard;
+    private int mass;
+    private ArrayList<String> children, scripts;
+    private boolean is_billboard;
+
 
     public Node() {
         children = new ArrayList<String>();
@@ -25,19 +27,24 @@ public class Node extends SceneModel {
         this.parent = "someNode";
         this.meshInstance = "cubeInstance";
         this.backgroundMusic = "background.mp3";
-        this.isBillboard = false;
+        this.is_billboard = false;
+        this.scripts = new ArrayList<>();
+        this.camera = "camera";
     }
 
-    public Node(String name, String parent, String meshInstance, String backgroundMusic, double[] scale, double[] rotation, double[] translation, ArrayList<String> children, boolean isBillboard) {
-        this.name = name;
-        this.parent = parent;
-        this.meshInstance = meshInstance;
-        this.backgroundMusic = backgroundMusic;
-        this.scale = scale;
-        this.rotation = rotation;
-        this.translation = translation;
-        this.children = children;
-        this.isBillboard = isBillboard;
+    public Node(Node n) {
+        this.name = n.getName();
+        this.parent = n.getParent();
+        this.meshInstance = n.getMeshInstance();
+        this.backgroundMusic = n.getBackgroundMusic();
+        this.camera = n.getCamera();
+        this.scale = n.getScale();
+        this.rotation = n.getRotation();
+        this.translation = n.getTranslation();
+        this.mass = n.getMass();
+        this.children = n.getChildren();
+        this.scripts = n.getScripts();
+        this.is_billboard = n.isBillboard();
     }
 
     public String getName() {
@@ -105,10 +112,34 @@ public class Node extends SceneModel {
     }
 
     public boolean isBillboard() {
-        return isBillboard;
+        return is_billboard;
     }
 
     public void setBillboard(boolean isBillboard) {
-        this.isBillboard = isBillboard;
+        this.is_billboard = isBillboard;
+    }
+
+    public ArrayList<String> getScripts() {
+        return scripts;
+    }
+
+    public void setScripts(ArrayList<String> scripts) {
+        this.scripts = scripts;
+    }
+
+    public int getMass() {
+        return mass;
+    }
+
+    public void setMass(int mass) {
+        this.mass = mass;
+    }
+
+    public String getCamera() {
+        return camera;
+    }
+
+    public void setCamera(String camera) {
+        this.camera = camera;
     }
 }

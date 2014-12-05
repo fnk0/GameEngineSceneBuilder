@@ -25,15 +25,15 @@ public class MeshTex extends SceneModel {
         return name;
     }
 
-    public void setTexName(String texName) {
-        this.name = texName;
+    public void setTexName(String name) {
+        this.name = name;
     }
 
     public String getTexType() {
         return type;
     }
 
-    public void setTexType(String texType) {
-        this.type = texType;
+    public void setTexType(String type) {
+        this.type = type;
     }
 }

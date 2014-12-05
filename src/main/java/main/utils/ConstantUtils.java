@@ -26,6 +26,7 @@ public class ConstantUtils {
     public static String TEXTURES_LAYOUT = "layouts/texturesLayout.fxml";
     public static String LIGHTS_LAYOUT = "layouts/lightsLayout.fxml";
     public static String NODES_LAYOUT = "layouts/nodesLayout.fxml";
+    public static String TILE_EDITOR_LAYOUT = "layouts/gridEditor.fxml";
 
     // INDIVIDUAL ELEMENT LAYOUTS
     public static String MESH_LAYOUT = "layouts/meshBox.fxml";

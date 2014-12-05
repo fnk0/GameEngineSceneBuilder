@@ -53,6 +53,11 @@
                                     <Insets left="15.0" />
                                  </HBox.margin>
                               </TextField>
+                              <Button mnemonicParsing="false" onAction="#selectParent" styleClass="btn" text="...">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Button>
                            </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="70.0" prefHeight="50.0">
@@ -63,6 +68,11 @@
                                     <Insets left="15.0" />
                                  </HBox.margin>
                               </TextField>
+                              <Button mnemonicParsing="false" onAction="#selectInstance" styleClass="btn" text="...">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Button>
                            </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="120.0" prefHeight="50.0">
@@ -143,6 +153,21 @@
                                     <Insets left="25.0" />
                                  </HBox.margin>
                               </TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="320.0" prefHeight="50.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Scripts:" />
+                              <TextField fx:id="scripts" layoutX="157.0" layoutY="22.0" prefHeight="26.0" prefWidth="431.0" promptText="Separte scripts by space">
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Button mnemonicParsing="false" onAction="#selectScripts" styleClass="btn" text="...">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </Button>
                            </children>
                         </HBox>
                      </children>
