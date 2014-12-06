@@ -145,7 +145,9 @@ public class CreateNewNodeController extends DefaultController {
         String[] scriptArray = scripts.getText().split(" ");
 
         for(String s : scriptArray) {
-            scriptsList.add(s);
+            if(!s.isEmpty()) {
+                scriptsList.add(s);
+            }
         }
 
         node.setScripts(scriptsList);
