@@ -28,7 +28,7 @@ public class CreateNewNodeController extends DefaultController {
     private TextField nodeName, parentNode, meshInstance, backgroundMusic, outputLocation, scripts;
 
     @FXML
-    private TextField trX, trY, trZ, rtX, rtY, rtZ, rtW, scX, scY, scZ;
+    private TextField trX, trY, trZ, rtX, rtY, rtZ, rtW, scX, scY, scZ, nodeType, vel;
 
     @FXML
     private CheckBox isBillboard;
@@ -145,7 +145,7 @@ public class CreateNewNodeController extends DefaultController {
         String[] scriptArray = scripts.getText().split(" ");
 
         for(String s : scriptArray) {
-            if(!s.isEmpty()) {
+            if(!s.isEmpty() || !s.equals("")) {
                 scriptsList.add(s);
             }
         }
@@ -153,6 +153,12 @@ public class CreateNewNodeController extends DefaultController {
         node.setScripts(scriptsList);
 
         node.setBillboard(isBillboard.isSelected());
+
+        node.setType(nodeType.getText());
+
+        if(CustomUtils.isTextNumValid(vel)) {
+            node.setVelocity(Double.parseDouble(vel.getText()));
+        }
 
         return node;
     }

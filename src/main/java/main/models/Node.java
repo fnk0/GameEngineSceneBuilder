@@ -11,11 +11,12 @@ import java.util.ArrayList;
  */
 public class Node extends SceneModel {
 
-    private String name, parent, meshInstance, backgroundMusic,camera;
+    private String name, parent, meshInstance, backgroundMusic,camera, type;
     private double[] scale, rotation, translation;
     private int mass;
     private ArrayList<String> children, scripts;
     private boolean is_billboard;
+    private double velocity;
 
 
     public Node() {
@@ -30,6 +31,8 @@ public class Node extends SceneModel {
         this.is_billboard = false;
         this.scripts = new ArrayList<>();
         this.camera = "camera";
+        this.type = "type";
+        this.velocity = 1;
     }
 
     public Node(Node n) {
@@ -45,6 +48,8 @@ public class Node extends SceneModel {
         this.children = n.getChildren();
         this.scripts = n.getScripts();
         this.is_billboard = n.isBillboard();
+        this.type = n.getType();
+        this.velocity = n.getVelocity();
     }
 
     public String getName() {
@@ -141,5 +146,21 @@ public class Node extends SceneModel {
 
     public void setCamera(String camera) {
         this.camera = camera;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public double getVelocity() {
+        return velocity;
+    }
+
+    public void setVelocity(double velocity) {
+        this.velocity = velocity;
     }
 }

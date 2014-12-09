@@ -261,7 +261,4 @@ public class TileEditorController extends DefaultController {
         ((Node) node).setTranslation(translation);
         return node;
     }
-
-
-
 }
